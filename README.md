@@ -1,3 +1,0 @@
-# WhatsNewKit
-
-`Work In Progress 👨‍💻`
