@@ -14,7 +14,7 @@
     <a title="WhatsNew Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">WhatsNewKit Docs</a> (99% documented)</p>
+        <p><a href="../index.html">WhatsNewKit Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/SvenTiigi/WhatsNewKit"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -56,10 +56,7 @@
                 <a href="../Classes/WhatsNewViewController.html">WhatsNewViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/WhatsNewViewController/DetailAction.html">– DetailAction</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/WhatsNewViewController/CompletionAction.html">– CompletionAction</a>
+                <a href="../Classes/WhatsNewViewController/Configuration.html">– Configuration</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/WhatsNewViewController/Theme.html">– Theme</a>
@@ -70,7 +67,7 @@
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Extensions/UIAlertController.html">UIAlertController</a>
+                <a href="../Extensions/Sequence.html">Sequence</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Extensions/UIColor.html">UIColor</a>
@@ -219,60 +216,6 @@
                     </section>
                   </div>
                 </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11WhatsNewKit0aB0V17detailButtonTitleSSSgvp"></a>
-                    <a name="//apple_ref/swift/Property/detailButtonTitle" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11WhatsNewKit0aB0V17detailButtonTitleSSSgvp">detailButtonTitle</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The detail button title</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">detailButtonTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11WhatsNewKit0aB0V21completionButtonTitleSSvp"></a>
-                    <a name="//apple_ref/swift/Property/completionButtonTitle" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11WhatsNewKit0aB0V21completionButtonTitleSSvp">completionButtonTitle</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The completion button title</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">completionButtonTitle</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -287,9 +230,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11WhatsNewKit0aB0VA2C7VersionV7version_SS5titleAC4ItemV5itemsdSSSg17detailButtonTitleSS010completionjK0tcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(version:title:items:detailButtonTitle:completionButtonTitle:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11WhatsNewKit0aB0VA2C7VersionV7version_SS5titleAC4ItemV5itemsdSSSg17detailButtonTitleSS010completionjK0tcfc">init(version:title:items:detailButtonTitle:completionButtonTitle:)</a>
+                    <a name="/s:11WhatsNewKit0aB0VA2C7VersionV7version_SS5titleSayAC4ItemVG5itemstcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(version:title:items:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit0aB0VA2C7VersionV7version_SS5titleSayAC4ItemVG5itemstcfc">init(version:title:items:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -304,11 +247,9 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt"><a href="../Structs/WhatsNew/Version.html">Version</a></span><span class="p">,</span>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt"><a href="../Structs/WhatsNew/Version.html">Version</a></span> <span class="o">=</span> <span class="o">.</span><span class="nf">current</span><span class="p">(</span><span class="nv">inBundle</span><span class="p">:</span> <span class="o">.</span><span class="n">main</span><span class="p">),</span>
             <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
-            <span class="nv">items</span><span class="p">:</span> <span class="kt"><a href="../Structs/WhatsNew/Item.html">Item</a></span><span class="o">...</span><span class="p">,</span>
-            <span class="nv">detailButtonTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-            <span class="nv">completionButtonTitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+            <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/WhatsNew/Item.html">Item</a></span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>
@@ -324,7 +265,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>The Version</p>
+                                  <p>The Version. Default value <code>current</code></p>
                                 </div>
                               </td>
                             </tr>
@@ -352,30 +293,6 @@
                                 </div>
                               </td>
                             </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>detailButtonTitle</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The optional detail button title</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>completionButtonTitle</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The completion button title</p>
-                                </div>
-                              </td>
-                            </tr>
                           </tbody>
                         </table>
                       </div>
@@ -385,13 +302,6 @@
               </ul>
             </div>
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Item"></a>
-                <a name="//apple_ref/swift/Section/Item" class="dashAnchor"></a>
-                <a href="#/Item">
-                  <h3 class="section-name">Item</h3>
-                </a>
-              </div>
               <ul>
                 <li class="item">
                   <div>
