@@ -138,6 +138,7 @@
    <a href="http://cocoapods.org/pods/WhatsNewKit">
       <img src="https://img.shields.io/cocoapods/p/WhatsNewKit.svg?style=flat" alt="Platform">
    </a>
+   <br/>
    <a href="https://codebeat.co/projects/github-com-sventiigi-whatsnewkit-master">
       <img src="https://codebeat.co/badges/058f975e-3f81-4466-b8d1-a8dd08830db7" alt="Codebeat">
    </a>
@@ -154,13 +155,404 @@
 
 <p><br/></p>
 
-<p><code>Work In Progress 👨‍💻</code></p>
+<p align="center">
+   WhatsNewKit enables you to easily showcase your awesome new app features. <br/> It&rsquo;s designed from the ground up to be fully customized to your needs.
+</p>
+
+<p><br/></p>
+
+<p align="center">
+   <img width="600" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/WhatsNewKit.gif" alt="Example">
+</p>
+<h2 id='example' class='heading'>Example</h2>
+
+<p>The example Application is an excellent way to see <code>WhatsNewKit</code> in action. You get a brief look of the available configuration options and how they affect the look and feel of the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code>. Simply open the <code>WhatsNewKit.xcodeproj</code> and run the <code>WhatsNewKit-Example</code> scheme.</p>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<p>WhatsNewKit is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+<pre class="highlight shell"><code>pod <span class="s1">'WhatsNewKit'</span>, <span class="s1">'~&gt; 1.0.0'</span>
+</code></pre>
+<h3 id='carthage' class='heading'>Carthage</h3>
+
+<p><a href="https://github.com/Carthage/Carthage">Carthage</a> is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.</p>
+
+<p>To integrate WhatsNewKit into your Xcode project using Carthage, specify it in your <code>Cartfile</code>:</p>
+<pre class="highlight plaintext"><code>github "SvenTiigi/WhatsNewKit" ~&gt; 1.0.0
+</code></pre>
+
+<p>Run <code>carthage update --platform iOS</code> to build the framework and drag the built <code>WhatsNewKit.framework</code> into your Xcode project. </p>
+
+<p>On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework path as mentioned in <a href="https://github.com/Carthage/Carthage/blob/master/README.md">Carthage Getting started Step 4, 5 and 6</a></p>
+<h3 id='manually' class='heading'>Manually</h3>
+
+<p>If you prefer not to use any of the aforementioned dependency managers, you can integrate WhatsNewKit into your project manually. Simply drag the <code>Sources</code> Folder into your Xcode project.</p>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>The following first usage description shows the easiest way of presenting your new app features with <code>WhatsNewKit</code>.</p>
+
+<blockquote>
+<p>👨‍💻 Please see the <a href="https://github.com/SvenTiigi/WhatsNewKit#advanced">Advanced</a> section for further configuration options and features.</p>
+</blockquote>
+<h3 id='whatsnew' class='heading'>WhatsNew</h3>
+
+<p>To present your awesome new app features, you first have to declare what is new and what are those amazing features inside your app. You start off with a <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Models/WhatsNew%2BItem.swift">WhatsNew.Item</a> which represents a new feature in your app. You initialize a <code><a href="Structs/WhatsNew/Item.html">WhatsNew.Item</a></code> by passing a <code>title</code>, <code>subtitle</code> and an optional <code>UIImage</code>.</p>
+<pre class="highlight swift"><code><span class="c1">// Initialize a WhatsNew.Item which represents an App-Feature</span>
+<span class="k">let</span> <span class="nv">installationItem</span> <span class="o">=</span> <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Item</span><span class="p">(</span>
+    <span class="nv">title</span><span class="p">:</span> <span class="s">"Installation"</span><span class="p">,</span>
+    <span class="nv">subtitle</span><span class="p">:</span> <span class="s">"You can install WhatsNewKit via CocoaPods or Carthage"</span><span class="p">,</span>
+    <span class="nv">image</span><span class="p">:</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"installation"</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre>
+
+<p>After you initialized various <code><a href="Structs/WhatsNew/Item.html">WhatsNew.Item</a></code>s you are good to go to setup the <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Models/WhatsNew.swift">WhatsNew</a> struct by passing a <code>title</code> and your <code><a href="Structs/WhatsNew/Item.html">WhatsNew.Item</a></code> array.</p>
+<pre class="highlight swift"><code><span class="c1">// Initialize WhatsNew with Title and Items</span>
+<span class="k">let</span> <span class="nv">whatsNew</span> <span class="o">=</span> <span class="kt">WhatsNew</span><span class="p">(</span>
+    <span class="nv">title</span><span class="p">:</span> <span class="s">"WhatsNewKit"</span><span class="p">,</span>
+    <span class="nv">items</span><span class="p">:</span> <span class="p">[</span>
+        <span class="n">easySetupItem</span><span class="p">,</span>
+        <span class="n">themesItem</span><span class="p">,</span>
+        <span class="n">installationItem</span><span class="p">,</span>
+        <span class="n">openSourceItem</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</code></pre>
+<h3 id='whatsnewviewcontroller' class='heading'>WhatsNewViewController</h3>
+
+<p>The presentation of your new app features are handled via the <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Controllers/WhatsNewViewController.swift">WhatsNewViewController</a>. Simply pass your <code><a href="Structs/WhatsNew.html">WhatsNew</a></code> struct to the initializer and present or push the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code></p>
+<pre class="highlight swift"><code><span class="c1">// Initialize WhatsNewViewController with WhatsNew</span>
+<span class="k">let</span> <span class="nv">whatsNewViewController</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="p">(</span>
+    <span class="nv">whatsNew</span><span class="p">:</span> <span class="n">whatsNew</span>
+<span class="p">)</span>
+<span class="c1">// Present it</span>
+<span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">whatsNewViewController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+</code></pre>
+<h2 id='advanced' class='heading'>Advanced</h2>
+
+<p>As mentioned before <code>WhatsNewKit</code> can be fully customized to your needs. The Advanced section will explain all configuration possibilities and features of <code>WhatsNewKit</code> in detail. First off it&rsquo;s important to understand the components of the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> in order to customize the behaviour and <code>UI</code>-Design.</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/UILayout.jpg" width="500">
+</p>
+<h3 id='whatsnewviewcontroller-configuration' class='heading'>WhatsNewViewController.Configuration</h3>
+
+<p>The <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Controllers/WhatsNewViewController%2BConfiguration.swift">WhatsNewViewController.Configuration</a> struct enables you to customize the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> to your needs.</p>
+
+<p>The <code><a href="Classes/WhatsNewViewController/Configuration.html">WhatsNewViewController.Configuration</a></code> consist of three main properties.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>theme</td>
+<td>All <code>UI</code> related settings can be customized here</td>
+</tr>
+<tr>
+<td>detailButton</td>
+<td>Optional detail button to configure the title and the action that should be performed after pressing</td>
+</tr>
+<tr>
+<td>completionButton</td>
+<td>The completion button to configure the title and the corresponding action that should take place after pressing</td>
+</tr>
+</tbody></table>
+
+<p>The configuration itself can be passed to the initializer of the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code>.</p>
+<pre class="highlight swift"><code><span class="c1">// Initialize default Configuration</span>
+<span class="k">let</span> <span class="nv">configuration</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="p">()</span>
+
+<span class="c1">// Initialize WhatsNewViewController with custom configuration</span>
+<span class="k">let</span> <span class="nv">whatsNewViewController</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="p">(</span>
+    <span class="nv">whatsNew</span><span class="p">:</span> <span class="n">whatsNew</span><span class="p">,</span> 
+    <span class="nv">configuration</span><span class="p">:</span> <span class="n">configuration</span>
+<span class="p">)</span>
+</code></pre>
+
+<p>The upcoming subsection will explain the properties <code>Theme</code>, <code>DetailButton</code> and <code>CompletionButton</code> in detail.</p>
+<h4 id='theme' class='heading'>Theme</h4>
+
+<p>The <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Theme/WhatsNewViewController%2BTheme.swift">WhatsNewViewController.Configuration.Theme</a> struct allows you to perfectly match the design to your existing App. You can customize all kinds of <code>UI</code> related settings.</p>
+<pre class="highlight swift"><code><span class="c1">// Initialize and configure the Theme to your needs</span>
+<span class="k">var</span> <span class="nv">theme</span><span class="p">:</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt">Theme</span>
+</code></pre>
+<h5 id='templates' class='heading'>Templates</h5>
+
+<p>Beside the full configuration possibilities you can make use of the predefined <code>Theme</code> <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Theme/WhatsNewViewController%2BTheme%2BTemplate.swift">Templates</a> which are available as static properties. All templates are available in white and dark mode 😎.</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/Templates.jpg" width="600">
+</p>
+<pre class="highlight swift"><code><span class="c1">// Dark Red template Theme</span>
+<span class="k">let</span> <span class="nv">darkRed</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt">Theme</span><span class="o">.</span><span class="n">darkRed</span>
+
+<span class="c1">// White Red template Theme</span>
+<span class="k">let</span> <span class="nv">whiteRed</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt">Theme</span><span class="o">.</span><span class="n">whiteRed</span>
+
+<span class="c1">// TODO: Check out the example application for all available Tempaltes</span>
+</code></pre>
+<h5 id='animation' class='heading'>Animation</h5>
+
+<p><img align="right" width="300" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/Animations.gif" alt="Animations" /></p>
+
+<p>By setting the <code>animation</code> property on the <code>WhatsNewViewController.Configuration.Theme.ItemsViewTheme</code> you can apply an animation while displaying the <code>ItemsView</code>.</p>
+<pre class="highlight swift"><code><span class="c1">// Set custom animation for displaying WhatsNew.Item's</span>
+<span class="n">theme</span><span class="o">.</span><span class="n">itemsViewTheme</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">animator</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// view: The View to perform animation on</span>
+    <span class="c1">// count: The current WhatsNew.Item count (starting at zero)</span>
+<span class="p">})</span>
+</code></pre>
+
+<p>Or you can make use of the predefined animations like <code>fade</code>, <code>slideUp</code>, <code>slideDown</code>, <code>slideLeft</code>, <code>slideRight</code>.</p>
+<pre class="highlight swift"><code><span class="c1">// Set predefined slideUp theme</span>
+<span class="n">theme</span><span class="o">.</span><span class="n">itemsViewTheme</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="n">slideUp</span>
+</code></pre>
+
+<blockquote>
+<p>☝️ In default the Animation is set to <code>.none</code></p>
+</blockquote>
+<h4 id='detailbutton' class='heading'>DetailButton</h4>
+
+<p><img width="150" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/detailButton.jpg" alt="DetailButton"></p>
+
+<p>By setting an <code>DetailButton</code> struct on the <code><a href="Classes/WhatsNewViewController/Configuration.html">WhatsNewViewController.Configuration</a></code> struct you can customize the <code>title</code> and the corresponding <code>action</code> of the displayed detail button on the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code>. As the <code>DetailButton</code> struct is declared as optional the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> will only display the button if a <code>DetailButton</code> configuration is available</p>
+
+<table><thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>website</td>
+<td>When the user pressed the detail button a <code>SFSafariViewController</code> with the given <code>URL</code> will be presented</td>
+</tr>
+<tr>
+<td>custom</td>
+<td>After the detail button has been pressed by the user, your custom action will be invoked</td>
+</tr>
+</tbody></table>
+<pre class="highlight swift"><code><span class="c1">// Initialize DetailButton with title and open website at url</span>
+<span class="k">let</span> <span class="nv">detailButton</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt">DetailButton</span><span class="p">(</span>
+    <span class="nv">title</span><span class="p">:</span> <span class="s">"Read more"</span><span class="p">,</span> 
+    <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="nf">website</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/SvenTiigi/WhatsNewKit"</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1">// Initialize DetailButton with title and custom action</span>
+<span class="k">let</span> <span class="nv">detailButton</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt">DetailButton</span><span class="p">(</span>
+    <span class="nv">title</span><span class="p">:</span> <span class="s">"Read more"</span><span class="p">,</span> 
+    <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">whatsNewViewController</span><span class="p">)</span> <span class="k">in</span> <span class="p">{</span>
+        <span class="c1">// Perform custom action on detail button pressed</span>
+    <span class="p">})</span>
+<span class="p">)</span>
+</code></pre>
+<h4 id='completionbutton' class='heading'>CompletionButton</h4>
+
+<p><img width="300" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/completionButton.jpg" alt="CompletionButton"></p>
+
+<p>The <code>CompletionButton</code> struct configures the displayed title and the action when the user pressed the completion button on the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code>.</p>
+
+<table><thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dismiss</td>
+<td>When the user pressed the completion button, the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> will be dismissed. This is the default value</td>
+</tr>
+<tr>
+<td>custom</td>
+<td>After the completion button has been pressed by the user, your custom action will be invoked</td>
+</tr>
+</tbody></table>
+<pre class="highlight swift"><code><span class="c1">// Initialize CompletionButton with title and dismiss action</span>
+<span class="k">let</span> <span class="nv">completionButton</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt">CompletionButton</span><span class="p">(</span>
+    <span class="nv">title</span><span class="p">:</span> <span class="s">"Continue"</span><span class="p">,</span> 
+    <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="n">dismiss</span>
+<span class="p">)</span>
+
+<span class="c1">// Initialize CompletionButton with title and custom action</span>
+<span class="k">let</span> <span class="nv">completionButton</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt">CompletionButton</span><span class="p">(</span>
+    <span class="nv">title</span><span class="p">:</span> <span class="s">"Continue"</span><span class="p">,</span> 
+    <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">whatsNewViewController</span><span class="p">)</span> <span class="k">in</span> <span class="p">{</span>
+        <span class="c1">// Perform custom action on completion button pressed</span>
+    <span class="p">})</span>
+<span class="p">)</span>
+</code></pre>
+<h3 id='whatsnewversionstore' class='heading'>WhatsNewVersionStore</h3>
+
+<p align="center">
+   <img width="750" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/WhatsNewVersionStore.jpg" alt="WhatsNewVersionStore">
+</p>
+
+<p>If we speak about presenting awesome new app features we have to take care that this kind of <code>UI</code> action only happens once if the user installed the app or opened it after an update. The <code>WhatsNewKind</code> offers a neat solution for this kind of problem via the <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Store/WhatsNewVersionStore.swift">WhatsNewVersionStore</a> protocol.</p>
+<pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">WhatsNewVersionStore</span> <span class="o">=</span> <span class="kt">WriteableWhatsNewVersionStore</span> <span class="o">&amp;</span> <span class="kt">ReadableWhatsNewVersionStore</span>
+
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">WriteableWhatsNewVersionStore</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Version</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ReadableWhatsNewVersionStore</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">has</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Version</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> will use the APIs of the <code><a href="Typealiases.html#/s:11WhatsNewKit0aB12VersionStorea">WhatsNewVersionStore</a></code> in the following way.</p>
+
+<table><thead>
+<tr>
+<th>API</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>has(version:)</td>
+<td>Checks if the <code>Whatsnew.Version</code> is available and will return <code>nil</code> during initialization.</td>
+</tr>
+<tr>
+<td>set(version:)</td>
+<td>The <code><a href="Structs/WhatsNew/Version.html">WhatsNew.Version</a></code> will be set after the <code>CompletionButton</code> has been pressed.</td>
+</tr>
+</tbody></table>
+
+<p>The <code><a href="Typealiases.html#/s:11WhatsNewKit0aB12VersionStorea">WhatsNewVersionStore</a></code> can be passed as an parameter to the initializer. If you do so the initializer will become <code>optional</code>.</p>
+<pre class="highlight swift"><code><span class="c1">// Initialize WhatsNewViewController with WhatsNewVersionStore</span>
+<span class="k">let</span> <span class="nv">whatsNewViewController</span><span class="p">:</span> <span class="kt">WhatsNewViewController</span><span class="p">?</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="p">(</span>
+    <span class="nv">whatsNew</span><span class="p">:</span> <span class="n">whatsNew</span><span class="p">,</span> 
+    <span class="nv">versionStore</span><span class="p">:</span> <span class="n">myVersionStore</span>
+<span class="p">)</span>
+
+<span class="c1">// Check if WhatsNewViewController is available to present it.</span>
+<span class="c1">// If it's nil the user has already seen your new features for the corresponding Version.</span>
+<span class="c1">// ...</span>
+</code></pre>
+
+<blockquote>
+<p>☝️ Please keep in mind the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> initializer will only become <code>optional</code> and checks if the Version has been already presented if you pass a <code><a href="Typealiases.html#/s:11WhatsNewKit0aB12VersionStorea">WhatsNewVersionStore</a></code> object.</p>
+</blockquote>
+<h4 id='implementation' class='heading'>Implementation</h4>
+
+<p>If you already handled saving user settings in your app to something like <code>Realm</code>, <code>CoreData</code> or <code>UserDefaults</code> you can conform the <code><a href="Typealiases.html#/s:11WhatsNewKit0aB12VersionStorea">WhatsNewVersionStore</a></code> and pass it as an initializer parameter to the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code>.</p>
+<pre class="highlight swift"><code><span class="c1">// Extend your existing App-Logic</span>
+<span class="kd">extension</span> <span class="kt">MyUserSettingsDatabase</span><span class="p">:</span> <span class="kt">WhatsNewVersionStore</span> <span class="p">{</span>
+    <span class="c1">// Implement me 👨‍💻</span>
+<span class="p">}</span>
+</code></pre>
+<h5 id='predefined-implementations' class='heading'>Predefined Implementations</h5>
+
+<p>If not you can make use of the predefined <code><a href="Typealiases.html#/s:11WhatsNewKit0aB12VersionStorea">WhatsNewVersionStore</a></code> implementations which <code>WhatsNewKit</code> offers.</p>
+
+<p><a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Store/UserDefaultsWhatsNewVersionStore.swift">UserDefaultsWhatsNewVersionStore</a></p>
+<pre class="highlight swift"><code><span class="c1">// Initialize WhatsNewViewController with UserDefaultsWhatsNewVersionStore</span>
+<span class="k">let</span> <span class="nv">whatsNewViewController</span><span class="p">:</span> <span class="kt">WhatsNewViewController</span><span class="p">?</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="p">(</span>
+    <span class="nv">whatsNew</span><span class="p">:</span> <span class="n">whatsNew</span><span class="p">,</span> 
+    <span class="nv">versionStore</span><span class="p">:</span> <span class="kt">UserDefaultsWhatsNewVersionStore</span><span class="p">()</span>
+<span class="p">)</span>
+</code></pre>
+
+<blockquote>
+<p>Saves and retrieves the <code><a href="Structs/WhatsNew/Version.html">WhatsNew.Version</a></code> to the <code>UserDefaults</code>.</p>
+</blockquote>
+
+<p><a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Store/InMemoryWhatsNewVersionStore.swift">InMemoryWhatsNewVersionStore</a></p>
+<pre class="highlight swift"><code><span class="c1">// Initialize WhatsNewViewController with InMemoryWhatsNewVersionStore</span>
+<span class="k">let</span> <span class="nv">whatsNewViewController</span><span class="p">:</span> <span class="kt">WhatsNewViewController</span><span class="p">?</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="p">(</span>
+    <span class="nv">whatsNew</span><span class="p">:</span> <span class="n">whatsNew</span><span class="p">,</span> 
+    <span class="nv">versionStore</span><span class="p">:</span> <span class="kt">InMemoryWhatsNewVersionStore</span><span class="p">()</span>
+<span class="p">)</span>
+</code></pre>
+
+<blockquote>
+<p>Saves and retrieves the <code><a href="Structs/WhatsNew/Version.html">WhatsNew.Version</a></code> in memory. Perfect for development or testing phase 👌</p>
+</blockquote>
+<h4 id='whatsnew-version' class='heading'>WhatsNew.Version</h4>
+
+<p>During the initialization of the <code><a href="Structs/WhatsNew.html">WhatsNew</a></code> struct the <code>WhatsNewKit</code> will automatically retrieve the current App-Version via the <code>CFBundleShortVersionString</code> and construct a <code><a href="Structs/WhatsNew/Version.html">WhatsNew.Version</a></code> for you which is used by the <code><a href="Typealiases.html#/s:11WhatsNewKit0aB12VersionStorea">WhatsNewVersionStore</a></code> protocol in order to persist the presented app versions. If you want to manually set the version you can do it like the following example.</p>
+<pre class="highlight swift"><code><span class="c1">// Initialize Version 1.0.0</span>
+<span class="k">let</span> <span class="nv">version</span> <span class="o">=</span> <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Version</span><span class="p">(</span>
+    <span class="nv">major</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nv">minor</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nv">patch</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">)</span>
+
+<span class="c1">// Or use a String literal</span>
+<span class="k">let</span> <span class="nv">version</span> <span class="o">=</span> <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Version</span><span class="p">(</span><span class="nv">stringLiteral</span><span class="p">:</span> <span class="s">"1.0.0"</span><span class="p">)</span>
+</code></pre>
+
+<p>After you initialize a <code><a href="Structs/WhatsNew/Version.html">WhatsNew.Version</a></code> you can pass it to the initializer of a <code><a href="Structs/WhatsNew.html">WhatsNew</a></code> struct.</p>
+<pre class="highlight swift"><code><span class="c1">// Initialize WhatsNew with Title and Items</span>
+<span class="k">let</span> <span class="nv">whatsNew</span> <span class="o">=</span> <span class="kt">WhatsNew</span><span class="p">(</span>
+    <span class="nv">version</span><span class="p">:</span> <span class="n">version</span><span class="p">,</span>
+    <span class="nv">title</span><span class="p">:</span> <span class="s">"WhatsNewKit"</span><span class="p">,</span>
+    <span class="nv">items</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">)</span>
+</code></pre>
+<h3 id='codable-whatsnew' class='heading'>Codable WhatsNew</h3>
+
+<p>The <code><a href="Structs/WhatsNew.html">WhatsNew</a></code> struct is conform the <code>Codable</code> protocol which allows you to initialize a <code><a href="Structs/WhatsNew.html">WhatsNew</a></code> struct via <code>JSON</code>.</p>
+<pre class="highlight plaintext"><code>{
+    "version": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+    },
+    "title": "WhatsNewKit",
+    "items": [
+        {
+            "title": "Open Source",
+            "subtitle": "Contributions are very welcome 👨‍💻",
+            "image": "data:image/png;base64,R0lG42......."
+        }
+    ]
+}
+</code></pre>
+
+<p>The optional <code>image</code> property of the <code><a href="Structs/WhatsNew/Item.html">WhatsNew.Item</a></code> will be decoded and encoded in <code>Base64</code>.</p>
+<pre class="highlight swift"><code><span class="c1">// Encode to JSON</span>
+<span class="k">let</span> <span class="nv">encoded</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">JSONEncoder</span><span class="p">()</span><span class="o">.</span><span class="nf">encode</span><span class="p">(</span><span class="n">whatsNew</span><span class="p">)</span>
+
+<span class="c1">// Decode from JSON data</span>
+<span class="k">let</span> <span class="nv">decoded</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">WhatsNew</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
+</code></pre>
+<h2 id='contributing' class='heading'>Contributing</h2>
+
+<p>Contributions are very welcome 🙌 🤓</p>
+<h2 id='credits' class='heading'>Credits</h2>
+
+<p>The <code><a href="Structs/WhatsNew/Item.html">WhatsNew.Item</a></code> images (<a href="https://icons8.com/icon/62856/github">icons8-github</a>, <a href="https://icons8.com/icon/61018/puzzle">icons8-puzzle</a>, <a href="https://icons8.com/icon/59733/approval">icons8-approval</a>, <a href="https://icons8.com/icon/68826/picture">icons8-picture</a>) which are seen on the screenshots and inside the example application are taken from <a href="https://icons8.com/">icons8.com</a> and licensed under <a href="https://creativecommons.org/licenses/by-nd/3.0/">Creative Commons Attribution-NoDerivs 3.0 Unported</a>.</p>
+<h2 id='license' class='heading'>License</h2>
+<pre class="highlight plaintext"><code>WhatsNewKit
+Copyright (c) 2018 Sven Tiigi &lt;sven.tiigi@gmail.com&gt;
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</code></pre>
 
           </section>
         </section>
         <section id="footer">
           <p>Copyright 2018 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
