@@ -34,34 +34,31 @@
                 <a href="Classes/InMemoryWhatsNewVersionStore.html">InMemoryWhatsNewVersionStore</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/ThemableView.html">ThemableView</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/WhatsNewButtonView.html">WhatsNewButtonView</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/WhatsNewButtonView/ButtonType.html">– ButtonType</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/WhatsNewItemTableViewCell.html">WhatsNewItemTableViewCell</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/WhatsNewItemsView.html">WhatsNewItemsView</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/WhatsNewRoundedButton.html">WhatsNewRoundedButton</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/WhatsNewTitleView.html">WhatsNewTitleView</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WhatsNewViewController/CompletionButton.html">– CompletionButton</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/WhatsNewViewController/Configuration.html">– Configuration</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/WhatsNewViewController/DetailButton.html">– DetailButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WhatsNewViewController/CompletionButtonTheme.html">– CompletionButtonTheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WhatsNewViewController/DetailButtonTheme.html">– DetailButtonTheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WhatsNewViewController/ItemsViewTheme.html">– ItemsViewTheme</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/WhatsNewViewController/Theme.html">– Theme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WhatsNewViewController/TitleViewTheme.html">– TitleViewTheme</a>
               </li>
             </ul>
           </li>
@@ -72,13 +69,16 @@
                 <a href="Extensions/Sequence.html">Sequence</a>
               </li>
               <li class="nav-group-task">
-                <a href="Extensions/UIColor.html">UIColor</a>
+                <a href="Extensions/WhatsNewItemsView.html">WhatsNewItemsView</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/KeyValueable.html">KeyValueable</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Protocols/ReadableWhatsNewVersionStore.html">ReadableWhatsNewVersionStore</a>
               </li>
@@ -91,7 +91,7 @@
             <a href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Structs/UserDefaultsWhatsNewVersionStore.html">UserDefaultsWhatsNewVersionStore</a>
+                <a href="Structs/KeyValueWhatsNewVersionStore.html">KeyValueWhatsNewVersionStore</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/WhatsNew.html">WhatsNew</a>
@@ -142,9 +142,6 @@
    <a href="https://codebeat.co/projects/github-com-sventiigi-whatsnewkit-master">
       <img src="https://codebeat.co/badges/058f975e-3f81-4466-b8d1-a8dd08830db7" alt="Codebeat">
    </a>
-   <a href="https://codecov.io/gh/SvenTiigi/WhatsNewKit">
-      <img src="https://codecov.io/gh/SvenTiigi/WhatsNewKit/branch/master/graph/badge.svg" alt="Coverage" />
-   </a> 
    <a href="https://sventiigi.github.io/WhatsNewKit">
       <img src="https://github.com/SvenTiigi/WhatsNewKit/blob/gh-pages/badge.svg" alt="Documentation">
    </a>
@@ -220,7 +217,7 @@ it, simply add the following line to your Podfile:</p>
 </code></pre>
 <h3 id='whatsnewviewcontroller' class='heading'>WhatsNewViewController</h3>
 
-<p>The presentation of your new app features are handled via the <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Controllers/WhatsNewViewController.swift">WhatsNewViewController</a>. Simply pass your <code><a href="Structs/WhatsNew.html">WhatsNew</a></code> struct to the initializer and present or push the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code></p>
+<p>The presentation of your new app features are handled via the <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/WhatsNewViewController.swift">WhatsNewViewController</a>. Simply pass your <code><a href="Structs/WhatsNew.html">WhatsNew</a></code> struct to the initializer and present or push the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code></p>
 <pre class="highlight swift"><code><span class="c1">// Initialize WhatsNewViewController with WhatsNew</span>
 <span class="k">let</span> <span class="nv">whatsNewViewController</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="p">(</span>
     <span class="nv">whatsNew</span><span class="p">:</span> <span class="n">whatsNew</span>
@@ -237,7 +234,7 @@ it, simply add the following line to your Podfile:</p>
 </p>
 <h3 id='whatsnewviewcontroller-configuration' class='heading'>WhatsNewViewController.Configuration</h3>
 
-<p>The <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Controllers/WhatsNewViewController%2BConfiguration.swift">WhatsNewViewController.Configuration</a> struct enables you to customize the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> to your needs.</p>
+<p>The <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BConfiguration.swift">WhatsNewViewController.Configuration</a> struct enables you to customize the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> to your needs.</p>
 
 <p>The <code><a href="Classes/WhatsNewViewController/Configuration.html">WhatsNewViewController.Configuration</a></code> consist of three main properties.</p>
 
@@ -275,22 +272,47 @@ it, simply add the following line to your Podfile:</p>
 <p>The upcoming subsection will explain the properties <code>Theme</code>, <code>DetailButton</code> and <code>CompletionButton</code> in detail.</p>
 <h4 id='theme' class='heading'>Theme</h4>
 
-<p>The <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Theme/WhatsNewViewController%2BTheme.swift">WhatsNewViewController.Configuration.Theme</a> struct allows you to perfectly match the design to your existing App. You can customize all kinds of <code>UI</code> related settings.</p>
-<pre class="highlight swift"><code><span class="c1">// Initialize and configure the Theme to your needs</span>
-<span class="k">var</span> <span class="nv">theme</span><span class="p">:</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt">Theme</span>
-</code></pre>
+<p>The <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Theme/WhatsNewViewController%2BTheme.swift">WhatsNewViewController.Theme</a> struct allows you to perfectly match the design to your existing App. The following table list the available properties.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>backgroundColor</td>
+<td>The backgroun color of the WhatsNewViewController</td>
+</tr>
+<tr>
+<td>titleViewTheme</td>
+<td>Customize the font and text color of the TitleView</td>
+</tr>
+<tr>
+<td>itemsViewTheme</td>
+<td>Adjust title and subtitle via text color and font as well as the auto tint image option</td>
+</tr>
+<tr>
+<td>detailButtonTheme</td>
+<td>Title color and font of the DetailButton</td>
+</tr>
+<tr>
+<td>completionButtonTheme</td>
+<td>Configure title color and font for the CompletionButton</td>
+</tr>
+</tbody></table>
 <h5 id='templates' class='heading'>Templates</h5>
 
-<p>Beside the full configuration possibilities you can make use of the predefined <code>Theme</code> <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Theme/WhatsNewViewController%2BTheme%2BTemplate.swift">Templates</a> which are available as static properties. All templates are available in white and dark mode 😎.</p>
+<p>Beside the full configuration possibilities you can make use of the predefined <code>Theme</code> <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Theme/WhatsNewViewController%2BTheme.swift">Templates</a> which are available as static properties. All templates are available in white and dark mode 😎.</p>
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/Templates.jpg" width="600">
 </p>
 <pre class="highlight swift"><code><span class="c1">// Dark Red template Theme</span>
-<span class="k">let</span> <span class="nv">darkRed</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt">Theme</span><span class="o">.</span><span class="n">darkRed</span>
+<span class="k">let</span> <span class="nv">darkRed</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Theme</span><span class="o">.</span><span class="n">darkRed</span>
 
 <span class="c1">// White Red template Theme</span>
-<span class="k">let</span> <span class="nv">whiteRed</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt">Theme</span><span class="o">.</span><span class="n">whiteRed</span>
+<span class="k">let</span> <span class="nv">whiteRed</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Theme</span><span class="o">.</span><span class="n">whiteRed</span>
 
 <span class="c1">// TODO: Check out the example application for all available Tempaltes</span>
 </code></pre>
@@ -298,7 +320,7 @@ it, simply add the following line to your Podfile:</p>
 
 <p><img align="right" width="300" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/Animations.gif" alt="Animations" /></p>
 
-<p>By setting the <code>animation</code> property on the <code>WhatsNewViewController.Configuration.Theme.ItemsViewTheme</code> you can apply an animation while displaying the <code>ItemsView</code>.</p>
+<p>By setting the <code>animation</code> property on the <code><a href="Classes/WhatsNewViewController/ItemsViewTheme.html">WhatsNewViewController.ItemsViewTheme</a></code> you can apply an animation while displaying the <code>ItemsView</code>.</p>
 <pre class="highlight swift"><code><span class="c1">// Set custom animation for displaying WhatsNew.Item's</span>
 <span class="n">theme</span><span class="o">.</span><span class="n">itemsViewTheme</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">animator</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span> <span class="k">in</span>
     <span class="c1">// view: The View to perform animation on</span>
@@ -318,7 +340,7 @@ it, simply add the following line to your Podfile:</p>
 
 <p><img width="150" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/detailButton.jpg" alt="DetailButton"></p>
 
-<p>By setting an <code>DetailButton</code> struct on the <code><a href="Classes/WhatsNewViewController/Configuration.html">WhatsNewViewController.Configuration</a></code> struct you can customize the <code>title</code> and the corresponding <code>action</code> of the displayed detail button on the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code>. As the <code>DetailButton</code> struct is declared as optional the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> will only display the button if a <code>DetailButton</code> configuration is available</p>
+<p>By setting an <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BDetailButton.swift">DetailButton</a> struct on the <code><a href="Classes/WhatsNewViewController/Configuration.html">WhatsNewViewController.Configuration</a></code> struct you can customize the <code>title</code> and the corresponding <code>action</code> of the displayed detail button on the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code>. As the <code>DetailButton</code> struct is declared as optional the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> will only display the button if a <code>DetailButton</code> configuration is available</p>
 
 <table><thead>
 <tr>
@@ -336,13 +358,13 @@ it, simply add the following line to your Podfile:</p>
 </tr>
 </tbody></table>
 <pre class="highlight swift"><code><span class="c1">// Initialize DetailButton with title and open website at url</span>
-<span class="k">let</span> <span class="nv">detailButton</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt">DetailButton</span><span class="p">(</span>
+<span class="k">let</span> <span class="nv">detailButton</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">DetailButton</span><span class="p">(</span>
     <span class="nv">title</span><span class="p">:</span> <span class="s">"Read more"</span><span class="p">,</span> 
     <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="nf">website</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/SvenTiigi/WhatsNewKit"</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="c1">// Initialize DetailButton with title and custom action</span>
-<span class="k">let</span> <span class="nv">detailButton</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt">DetailButton</span><span class="p">(</span>
+<span class="k">let</span> <span class="nv">detailButton</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">DetailButton</span><span class="p">(</span>
     <span class="nv">title</span><span class="p">:</span> <span class="s">"Read more"</span><span class="p">,</span> 
     <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">whatsNewViewController</span><span class="p">)</span> <span class="k">in</span> <span class="p">{</span>
         <span class="c1">// Perform custom action on detail button pressed</span>
@@ -353,7 +375,7 @@ it, simply add the following line to your Podfile:</p>
 
 <p><img width="300" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/completionButton.jpg" alt="CompletionButton"></p>
 
-<p>The <code>CompletionButton</code> struct configures the displayed title and the action when the user pressed the completion button on the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code>.</p>
+<p>The <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BCompletionButton.swift">CompletionButton</a> struct configures the displayed title and the action when the user pressed the completion button on the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code>.</p>
 
 <table><thead>
 <tr>
@@ -371,13 +393,13 @@ it, simply add the following line to your Podfile:</p>
 </tr>
 </tbody></table>
 <pre class="highlight swift"><code><span class="c1">// Initialize CompletionButton with title and dismiss action</span>
-<span class="k">let</span> <span class="nv">completionButton</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt">CompletionButton</span><span class="p">(</span>
+<span class="k">let</span> <span class="nv">completionButton</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">CompletionButton</span><span class="p">(</span>
     <span class="nv">title</span><span class="p">:</span> <span class="s">"Continue"</span><span class="p">,</span> 
     <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="n">dismiss</span>
 <span class="p">)</span>
 
 <span class="c1">// Initialize CompletionButton with title and custom action</span>
-<span class="k">let</span> <span class="nv">completionButton</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt">CompletionButton</span><span class="p">(</span>
+<span class="k">let</span> <span class="nv">completionButton</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">CompletionButton</span><span class="p">(</span>
     <span class="nv">title</span><span class="p">:</span> <span class="s">"Continue"</span><span class="p">,</span> 
     <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">whatsNewViewController</span><span class="p">)</span> <span class="k">in</span> <span class="p">{</span>
         <span class="c1">// Perform custom action on completion button pressed</span>
@@ -447,16 +469,26 @@ it, simply add the following line to your Podfile:</p>
 
 <p>If not you can make use of the predefined <code><a href="Typealiases.html#/s:11WhatsNewKit0aB12VersionStorea">WhatsNewVersionStore</a></code> implementations which <code>WhatsNewKit</code> offers.</p>
 
-<p><a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Store/UserDefaultsWhatsNewVersionStore.swift">UserDefaultsWhatsNewVersionStore</a></p>
-<pre class="highlight swift"><code><span class="c1">// Initialize WhatsNewViewController with UserDefaultsWhatsNewVersionStore</span>
+<p><a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Store/KeyValueWhatsNewVersionStore.swift">KeyValueWhatsNewVersionStore</a></p>
+<pre class="highlight swift"><code><span class="c1">// Local KeyValueStore</span>
+<span class="k">let</span> <span class="nv">keyValueVersionStore</span> <span class="o">=</span> <span class="kt">KeyValueWhatsNewVersionStore</span><span class="p">(</span>
+    <span class="nv">keyValueable</span><span class="p">:</span> <span class="kt">UserDefaults</span><span class="o">.</span><span class="n">standard</span>
+<span class="p">)</span>
+
+<span class="c1">// iCloud KeyValueStore</span>
+<span class="k">let</span> <span class="nv">keyValueVersionStore</span> <span class="o">=</span> <span class="kt">KeyValueWhatsNewVersionStore</span><span class="p">(</span>
+    <span class="nv">keyValueable</span><span class="p">:</span> <span class="kt">NSUbiquitousKeyValueStore</span><span class="o">.</span><span class="k">default</span>
+<span class="p">)</span>
+
+<span class="c1">// Initialize WhatsNewViewController with KeyValueWhatsNewVersionStore</span>
 <span class="k">let</span> <span class="nv">whatsNewViewController</span><span class="p">:</span> <span class="kt">WhatsNewViewController</span><span class="p">?</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="p">(</span>
     <span class="nv">whatsNew</span><span class="p">:</span> <span class="n">whatsNew</span><span class="p">,</span> 
-    <span class="nv">versionStore</span><span class="p">:</span> <span class="kt">UserDefaultsWhatsNewVersionStore</span><span class="p">()</span>
+    <span class="nv">versionStore</span><span class="p">:</span> <span class="n">keyValueVersionStore</span>
 <span class="p">)</span>
 </code></pre>
 
 <blockquote>
-<p>Saves and retrieves the <code><a href="Structs/WhatsNew/Version.html">WhatsNew.Version</a></code> to the <code>UserDefaults</code>.</p>
+<p>Saves and retrieves the <code><a href="Structs/WhatsNew/Version.html">WhatsNew.Version</a></code> via a <code><a href="Protocols/KeyValueable.html">KeyValueable</a></code> protocol conform object. UserDefaults and NSUbiquitousKeyValueStore are already conform to that protocol 🙌</p>
 </blockquote>
 
 <p><a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Store/InMemoryWhatsNewVersionStore.swift">InMemoryWhatsNewVersionStore</a></p>
@@ -468,11 +500,11 @@ it, simply add the following line to your Podfile:</p>
 </code></pre>
 
 <blockquote>
-<p>Saves and retrieves the <code><a href="Structs/WhatsNew/Version.html">WhatsNew.Version</a></code> in memory. Perfect for development or testing phase 👌</p>
+<p>Saves and retrieves the <code><a href="Structs/WhatsNew/Version.html">WhatsNew.Version</a></code> in memory. Perfect for development or testing phase 👨‍💻</p>
 </blockquote>
 <h4 id='whatsnew-version' class='heading'>WhatsNew.Version</h4>
 
-<p>During the initialization of the <code><a href="Structs/WhatsNew.html">WhatsNew</a></code> struct the <code>WhatsNewKit</code> will automatically retrieve the current App-Version via the <code>CFBundleShortVersionString</code> and construct a <code><a href="Structs/WhatsNew/Version.html">WhatsNew.Version</a></code> for you which is used by the <code><a href="Typealiases.html#/s:11WhatsNewKit0aB12VersionStorea">WhatsNewVersionStore</a></code> protocol in order to persist the presented app versions. If you want to manually set the version you can do it like the following example.</p>
+<p>During the initialization of the <code><a href="Structs/WhatsNew.html">WhatsNew</a></code> struct the <code>WhatsNewKit</code> will automatically retrieve the current App-Version via the <code>CFBundleShortVersionString</code> and construct a <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Models/WhatsNew%2BVersion.swift">WhatsNew.Version</a> for you which is used by the <code><a href="Typealiases.html#/s:11WhatsNewKit0aB12VersionStorea">WhatsNewVersionStore</a></code> protocol in order to persist the presented app versions. If you want to manually set the version you can do it like the following example.</p>
 <pre class="highlight swift"><code><span class="c1">// Initialize Version 1.0.0</span>
 <span class="k">let</span> <span class="nv">version</span> <span class="o">=</span> <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Version</span><span class="p">(</span>
     <span class="nv">major</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -480,8 +512,11 @@ it, simply add the following line to your Podfile:</p>
     <span class="nv">patch</span><span class="p">:</span> <span class="mi">0</span>
 <span class="p">)</span>
 
-<span class="c1">// Or use a String literal</span>
+<span class="c1">// Use a String literal</span>
 <span class="k">let</span> <span class="nv">version</span> <span class="o">=</span> <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Version</span><span class="p">(</span><span class="nv">stringLiteral</span><span class="p">:</span> <span class="s">"1.0.0"</span><span class="p">)</span>
+
+<span class="c1">// Current Version in Bundle (Default)</span>
+<span class="k">let</span> <span class="nv">version</span> <span class="o">=</span> <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Version</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span>
 </code></pre>
 
 <p>After you initialize a <code><a href="Structs/WhatsNew/Version.html">WhatsNew.Version</a></code> you can pass it to the initializer of a <code><a href="Structs/WhatsNew.html">WhatsNew</a></code> struct.</p>
@@ -524,7 +559,7 @@ it, simply add the following line to your Podfile:</p>
 <p>Contributions are very welcome 🙌 🤓</p>
 <h2 id='credits' class='heading'>Credits</h2>
 
-<p>The <code><a href="Structs/WhatsNew/Item.html">WhatsNew.Item</a></code> images (<a href="https://icons8.com/icon/62856/github">icons8-github</a>, <a href="https://icons8.com/icon/61018/puzzle">icons8-puzzle</a>, <a href="https://icons8.com/icon/59733/approval">icons8-approval</a>, <a href="https://icons8.com/icon/68826/picture">icons8-picture</a>) which are seen on the screenshots and inside the example application are taken from <a href="https://icons8.com/">icons8.com</a> and licensed under <a href="https://creativecommons.org/licenses/by-nd/3.0/">Creative Commons Attribution-NoDerivs 3.0 Unported</a>.</p>
+<p>The <code><a href="Structs/WhatsNew/Item.html">WhatsNew.Item</a></code> images (<a href="https://icons8.com/icon/62856/github">icons8-github</a>, <a href="https://icons8.com/icon/61018/puzzle">icons8-puzzle</a>, <a href="https://icons8.com/icon/59733/approval">icons8-approval</a>, <a href="https://icons8.com/icon/68826/picture">icons8-picture</a>) which are seen on the screenshots and inside the example application are taken from <a href="https://icons8.com/">icons8.com</a> which are licensed under <a href="https://creativecommons.org/licenses/by-nd/3.0/">Creative Commons Attribution-NoDerivs 3.0 Unported</a>.</p>
 <h2 id='license' class='heading'>License</h2>
 <pre class="highlight plaintext"><code>WhatsNewKit
 Copyright (c) 2018 Sven Tiigi &lt;sven.tiigi@gmail.com&gt;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ButtonType Enumeration Reference</title>
+    <title>DetailButtonTheme Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/ButtonType" class="dashAnchor"></a>
-    <a title="ButtonType Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Struct/DetailButtonTheme" class="dashAnchor"></a>
+    <a title="DetailButtonTheme Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../../index.html">WhatsNewKit Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../../index.html">WhatsNewKit Reference</a>
         <img id="carat" src="../../img/carat.png" />
-        ButtonType Enumeration Reference
+        DetailButtonTheme Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -35,34 +35,31 @@
                 <a href="../../Classes/InMemoryWhatsNewVersionStore.html">InMemoryWhatsNewVersionStore</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Classes/ThemableView.html">ThemableView</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../../Classes/WhatsNewButtonView.html">WhatsNewButtonView</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../../Classes/WhatsNewButtonView/ButtonType.html">– ButtonType</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../../Classes/WhatsNewItemTableViewCell.html">WhatsNewItemTableViewCell</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../../Classes/WhatsNewItemsView.html">WhatsNewItemsView</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../../Classes/WhatsNewRoundedButton.html">WhatsNewRoundedButton</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../../Classes/WhatsNewTitleView.html">WhatsNewTitleView</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../../Classes/WhatsNewViewController.html">WhatsNewViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/WhatsNewViewController/CompletionButton.html">– CompletionButton</a>
               </li>
               <li class="nav-group-task">
                 <a href="../../Classes/WhatsNewViewController/Configuration.html">– Configuration</a>
               </li>
               <li class="nav-group-task">
+                <a href="../../Classes/WhatsNewViewController/DetailButton.html">– DetailButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/WhatsNewViewController/CompletionButtonTheme.html">– CompletionButtonTheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/WhatsNewViewController/DetailButtonTheme.html">– DetailButtonTheme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/WhatsNewViewController/ItemsViewTheme.html">– ItemsViewTheme</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../../Classes/WhatsNewViewController/Theme.html">– Theme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/WhatsNewViewController/TitleViewTheme.html">– TitleViewTheme</a>
               </li>
             </ul>
           </li>
@@ -73,13 +70,16 @@
                 <a href="../../Extensions/Sequence.html">Sequence</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Extensions/UIColor.html">UIColor</a>
+                <a href="../../Extensions/WhatsNewItemsView.html">WhatsNewItemsView</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Protocols/KeyValueable.html">KeyValueable</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../../Protocols/ReadableWhatsNewVersionStore.html">ReadableWhatsNewVersionStore</a>
               </li>
@@ -92,7 +92,7 @@
             <a href="../../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../../Structs/UserDefaultsWhatsNewVersionStore.html">UserDefaultsWhatsNewVersionStore</a>
+                <a href="../../Structs/KeyValueWhatsNewVersionStore.html">KeyValueWhatsNewVersionStore</a>
               </li>
               <li class="nav-group-task">
                 <a href="../../Structs/WhatsNew.html">WhatsNew</a>
@@ -118,14 +118,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>ButtonType</h1>
+            <h1>DetailButtonTheme</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ButtonType</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">DetailButtonTheme</span> <span class="p">:</span> <span class="kt">Equatable</span></code></pre>
 
                 </div>
               </div>
-            <p>The ButtonType</p>
+            <p>The DetailButtonTheme</p>
 
           </section>
           <section class="section task-group-section">
@@ -134,9 +134,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11WhatsNewKit0aB10ButtonViewC0D4TypeO6detailA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/detail" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11WhatsNewKit0aB10ButtonViewC0D4TypeO6detailA2EmF">detail</a>
+                    <a name="/s:11WhatsNewKit0aB14ViewControllerC17DetailButtonThemeV9titleFontSo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/titleFont" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC17DetailButtonThemeV9titleFontSo6UIFontCvp">titleFont</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -144,14 +144,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Detail button</p>
+                        <p>The title font</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">detail</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">titleFont</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
 
                         </div>
                       </div>
@@ -161,9 +161,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11WhatsNewKit0aB10ButtonViewC0D4TypeO10completionA2EmF"></a>
-                    <a name="//apple_ref/swift/Element/completion" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11WhatsNewKit0aB10ButtonViewC0D4TypeO10completionA2EmF">completion</a>
+                    <a name="/s:11WhatsNewKit0aB14ViewControllerC17DetailButtonThemeV10titleColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/titleColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC17DetailButtonThemeV10titleColorSo7UIColorCvp">titleColor</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -171,16 +171,75 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Completion button</p>
+                        <p>The title color</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">completion</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">titleColor</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
 
                         </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11WhatsNewKit0aB14ViewControllerC17DetailButtonThemeVAESo6UIFontC9titleFont_So7UIColorC0J5Colortcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(titleFont:titleColor:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC17DetailButtonThemeVAESo6UIFontC9titleFont_So7UIColorC0J5Colortcfc">init(titleFont:titleColor:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Default initializer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">titleFont</span><span class="p">:</span> <span class="kt">UIFont</span><span class="p">,</span>
+            <span class="nv">titleColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>titleFont</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The title font</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>titleColor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The title color</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
