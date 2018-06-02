@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ReadableWhatsNewVersionStore Protocol Reference</title>
+    <title>HapticFeedback Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Protocol/ReadableWhatsNewVersionStore" class="dashAnchor"></a>
-    <a title="ReadableWhatsNewVersionStore Protocol Reference"></a>
+    <a name="//apple_ref/swift/Enum/HapticFeedback" class="dashAnchor"></a>
+    <a title="HapticFeedback Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">WhatsNewKit Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">WhatsNewKit Reference</a>
         <img id="carat" src="../img/carat.png" />
-        ReadableWhatsNewVersionStore Protocol Reference
+        HapticFeedback Enumeration Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -126,14 +126,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>ReadableWhatsNewVersionStore</h1>
+            <h1>HapticFeedback</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ReadableWhatsNewVersionStore</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">HapticFeedback</span> <span class="p">:</span> <span class="kt">Equatable</span></code></pre>
 
                 </div>
               </div>
-            <p>The ReadableWhatsNewVersionStore</p>
+            <p>The HapticFeedback Enumeration</p>
 
           </section>
           <section class="section task-group-section">
@@ -142,9 +142,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11WhatsNewKit08ReadableaB12VersionStoreP3hasSbAA0aB0V0E0V7version_tF"></a>
-                    <a name="//apple_ref/swift/Method/has(version:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11WhatsNewKit08ReadableaB12VersionStoreP3hasSbAA0aB0V0E0V7version_tF">has(version:)</a>
+                    <a name="/s:11WhatsNewKit14HapticFeedbackO6impactA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/impact" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit14HapticFeedbackO6impactA2CmF">impact</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -152,39 +152,70 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Has Version</p>
+                        <p>ImpactFeedback</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">has</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt"><a href="../Structs/WhatsNew.html">WhatsNew</a></span><span class="o">.</span><span class="kt">Version</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">impact</span></code></pre>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>version</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The Version</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11WhatsNewKit14HapticFeedbackO9selectionA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/selection" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit14HapticFeedbackO9selectionA2CmF">selection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>SelectionFeedback</p>
+
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>Bool if Version has been presented</p>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">selection</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11WhatsNewKit14HapticFeedbackO12notificationACSC014UINotificationE4TypeOcACmF"></a>
+                    <a name="//apple_ref/swift/Element/notification" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit14HapticFeedbackO12notificationACSC014UINotificationE4TypeOcACmF">notification</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>NotificationFeedback with FeedbackType</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">notification</span><span class="p">(</span><span class="kt">UINotificationFeedbackType</span><span class="p">)</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
