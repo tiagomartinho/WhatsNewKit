@@ -287,23 +287,31 @@ it, simply add the following line to your Podfile:</p>
 
 <p><img align="right" width="300" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/Animations.gif" alt="Animations" /></p>
 
-<p>You can apply a <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BAnimation.swift">Animation</a> to all components of the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> via predefined animation types like <code>fade</code>, <code>slideUp</code>, <code>slideDown</code>, <code>slideLeft</code>, <code>slideRight</code> or apply your own animation. In default all Animation properties are <code>nil</code> indicating no animation should be perfomed.</p>
+<p>You can apply a <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BAnimation.swift">Animation</a> to all components of the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> via predefined animation types. In default all Animation properties are <code>nil</code> indicating no animation should be perfomed.</p>
 <pre class="highlight swift"><code><span class="c1">// Set SlideUp Animation to TitleView</span>
 <span class="n">configuration</span><span class="o">.</span><span class="n">titleView</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="n">slideUp</span>
 
 <span class="c1">// Set SlideRight Animation to ItemsView</span>
 <span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="n">slideRight</span>
 
-<span class="c1">// Custom Animation for DetailButton</span>
-<span class="n">configuration</span><span class="o">.</span><span class="n">detailButton</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">animator</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">settings</span><span class="p">:</span> <span class="kt">AnimatorSettings</span><span class="p">)</span> <span class="k">in</span>
-    <span class="c1">// view: The View to perform animation on</span>
-    <span class="c1">// settings: Preferred duration and delay</span>
-<span class="p">})</span>
+<span class="c1">// Set SlideLeft Animation to DetailButton</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">detailButton</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="n">slideLeft</span>
+
+<span class="c1">// Set SlideDown Animation to CompletionButton</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">completionButton</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="n">slideDown</span>
 </code></pre>
 
 <p>If you wish to animate all views with the same type you can do so by simply applying it to the configuration.</p>
 <pre class="highlight swift"><code><span class="c1">// Global Animation-Type for all WhatsNewViewController components</span>
 <span class="n">configuration</span><span class="o">.</span><span class="nf">apply</span><span class="p">(</span><span class="nv">animation</span><span class="p">:</span> <span class="o">.</span><span class="n">fade</span><span class="p">)</span>
+</code></pre>
+
+<p>If you wish to define your custom animation, simply set the <code>custom</code> enum and pass an animator closure.</p>
+<pre class="highlight swift"><code><span class="c1">// Custom Animation for DetailButton</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">detailButton</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">animator</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">settings</span><span class="p">:</span> <span class="kt">AnimatorSettings</span><span class="p">)</span> <span class="k">in</span>
+    <span class="c1">// view: The View to perform animation on</span>
+    <span class="c1">// settings: Preferred duration and delay</span>
+<span class="p">})</span>
 </code></pre>
 <h3 id='detailbutton' class='heading'>DetailButton</h3>
 
