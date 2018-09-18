@@ -343,7 +343,7 @@ it, simply add the following line to your Podfile:</p>
 <span class="c1">// Initialize DetailButton with title and custom action</span>
 <span class="k">let</span> <span class="nv">detailButton</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">DetailButton</span><span class="p">(</span>
     <span class="nv">title</span><span class="p">:</span> <span class="s">"Read more"</span><span class="p">,</span> 
-    <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">whatsNewViewController</span> <span class="k">in</span> <span class="p">{</span>
+    <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">whatsNewViewController</span> <span class="k">in</span>
         <span class="c1">// Perform custom action on detail button pressed</span>
     <span class="p">})</span>
 <span class="p">)</span>
@@ -378,7 +378,7 @@ it, simply add the following line to your Podfile:</p>
 <span class="c1">// Initialize CompletionButton with title and custom action</span>
 <span class="k">let</span> <span class="nv">completionButton</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">CompletionButton</span><span class="p">(</span>
     <span class="nv">title</span><span class="p">:</span> <span class="s">"Continue"</span><span class="p">,</span> 
-    <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">whatsNewViewController</span> <span class="k">in</span> <span class="p">{</span>
+    <span class="nv">action</span><span class="p">:</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">action</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">whatsNewViewController</span> <span class="k">in</span>
         <span class="c1">// Perform custom action on completion button pressed</span>
     <span class="p">})</span>
 <span class="p">)</span>
@@ -387,7 +387,7 @@ it, simply add the following line to your Podfile:</p>
 
 <p>You can enable on both <code>DetailButton</code> and <code>CompletionButton</code> haptic feedback when the user pressed one of these buttons. Either by setting the property or passing it to the initializer.</p>
 <pre class="highlight swift"><code><span class="c1">// Impact Feedback</span>
-<span class="n">button</span><span class="o">.</span><span class="n">hapticFeedback</span> <span class="o">=</span> <span class="o">.</span><span class="n">impact</span>
+<span class="n">button</span><span class="o">.</span><span class="n">hapticFeedback</span> <span class="o">=</span> <span class="o">.</span><span class="nf">impact</span><span class="p">(</span><span class="o">.</span><span class="n">medium</span><span class="p">)</span>
 
 <span class="c1">// Selection Feedback</span>
 <span class="n">button</span><span class="o">.</span><span class="n">hapticFeedback</span> <span class="o">=</span> <span class="o">.</span><span class="n">selection</span>
@@ -573,6 +573,17 @@ it, simply add the following line to your Podfile:</p>
 <span class="c1">// Decode from JSON data</span>
 <span class="k">let</span> <span class="nv">decoded</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="kt">JSONDecoder</span><span class="p">()</span><span class="o">.</span><span class="nf">decode</span><span class="p">(</span><span class="kt">WhatsNew</span><span class="o">.</span><span class="k">self</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span>
 </code></pre>
+<h2 id='featured-on' class='heading'>Featured on</h2>
+
+<ul>
+<li><a href="http://weekly.awesomeios.com/issues/2#start">Awesome iOS Weekly</a></li>
+<li><a href="http://digest.swiftweekly.com/issues/swift-weekly-issue-118-114740">Swift Weekly</a></li>
+<li><a href="http://digest.appcoda.com/issues/appcoda-weekly-issue-74-116292">AppCoda Weekly</a></li>
+<li><a href="http://ios-goodies.com/post/174437386181/week-232">iOS Goodies</a></li>
+<li><a href="https://medium.mybridge.co/swift-open-source-projects-of-the-month-v-june-2018-f9ce1239eee4">MyBridge - Open Source Swift Projects (June 2018)</a></li>
+<li><a href="http://theiostimes.com/issue-44.html">The iOS Times</a></li>
+<li><a href="https://dzone.com/articles/this-week-in-mobile-11-june-2018">DZone</a></li>
+</ul>
 <h2 id='contributing' class='heading'>Contributing</h2>
 
 <p>Contributions are very welcome 🙌 🤓</p>
