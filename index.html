@@ -127,7 +127,7 @@
 
 <p align="center">
    <a href="https://developer.apple.com/swift/">
-      <img src="https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat" alt="Swift 4.1">
+      <img src="https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat" alt="Swift 4.2">
    </a>
    <a href="https://travis-ci.com/SvenTiigi/WhatsNewKit">
       <img src="https://travis-ci.com/SvenTiigi/WhatsNewKit.svg?branch=master" alt="Build Status">
@@ -275,14 +275,49 @@ it, simply add the following line to your Podfile:</p>
 
 <span class="c1">// Or create your own Theme and initialize a Configuration with your Theme</span>
 <span class="k">let</span> <span class="nv">myTheme</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Theme</span> <span class="p">{</span> <span class="n">configuration</span> <span class="k">in</span>
-    <span class="c1">// Apply customizations ...</span>
+    <span class="n">configuration</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
+    <span class="n">configuration</span><span class="o">.</span><span class="n">titleView</span><span class="o">.</span><span class="n">titleColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
+    <span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">titleFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">17</span><span class="p">)</span>
+    <span class="n">configuration</span><span class="o">.</span><span class="n">detailButton</span><span class="o">.</span><span class="n">titleColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
+    <span class="n">configuration</span><span class="o">.</span><span class="n">completionButton</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
+    <span class="c1">// ...</span>
 <span class="p">}</span>
+
 <span class="k">let</span> <span class="nv">configuration</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="p">(</span>
     <span class="nv">theme</span><span class="p">:</span> <span class="n">myTheme</span>
 <span class="p">)</span>
 </code></pre>
 
 <p>For a full overview of the available predefined Themes check out the <a href="https://github.com/SvenTiigi/WhatsNewKit/tree/master/Example">Example-Application</a>.</p>
+<h3 id='layout' class='heading'>Layout</h3>
+
+<p><code>WhatsNewKit</code> comes with two predefined <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BItemsView.swift"><code>ItemsView.Layouts</code></a>. </p>
+
+<table><thead>
+<tr>
+<th>Default</th>
+<th>Centered</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/LayoutDefault.png" /></td>
+<td><img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/LayoutCentered.png" /></td>
+</tr>
+<tr>
+<td>The <code>default</code> layout shows an image on the left side and the text on the right side.</td>
+<td>The <code>centered</code> layout aligns the image as well as the text in center.</td>
+</tr>
+</tbody></table>
+<pre class="highlight swift"><code><span class="c1">/// Default Layout</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="o">.</span><span class="k">default</span>
+
+<span class="c1">// Centered Layout</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="o">.</span><span class="n">centered</span>
+</code></pre>
+
+<blockquote>
+<p>☝️ By default the ItemsView layout is set to <code>default</code>.</p>
+</blockquote>
 <h3 id='animation' class='heading'>Animation</h3>
 
 <p><img align="right" width="300" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/Animations.gif" alt="Animations" /></p>
@@ -308,7 +343,7 @@ it, simply add the following line to your Podfile:</p>
 
 <p>If you wish to define your custom animation, simply set the <code>custom</code> enum and pass an animator closure.</p>
 <pre class="highlight swift"><code><span class="c1">// Custom Animation for DetailButton</span>
-<span class="n">configuration</span><span class="o">.</span><span class="n">detailButton</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">animator</span><span class="p">:</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">settings</span><span class="p">:</span> <span class="kt">AnimatorSettings</span><span class="p">)</span> <span class="k">in</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">detailButton</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">animator</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">settings</span><span class="p">:</span> <span class="kt">AnimatorSettings</span><span class="p">)</span> <span class="k">in</span>
     <span class="c1">// view: The View to perform animation on</span>
     <span class="c1">// settings: Preferred duration and delay</span>
 <span class="p">})</span>
@@ -413,10 +448,12 @@ it, simply add the following line to your Podfile:</p>
 <pre class="highlight swift"><code><span class="c1">/// WhatsNewVersionStore typealias protocol composition</span>
 <span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">WhatsNewVersionStore</span> <span class="o">=</span> <span class="kt">WriteableWhatsNewVersionStore</span> <span class="o">&amp;</span> <span class="kt">ReadableWhatsNewVersionStore</span>
 
+<span class="c1">/// The WriteableWhatsNewVersionStore</span>
 <span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">WriteableWhatsNewVersionStore</span> <span class="p">{</span>
     <span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Version</span><span class="p">)</span>
 <span class="p">}</span>
 
+<span class="c1">/// The ReadableWhatsNewVersionStore</span>
 <span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ReadableWhatsNewVersionStore</span> <span class="p">{</span>
     <span class="kd">func</span> <span class="nf">has</span><span class="p">(</span><span class="nv">version</span><span class="p">:</span> <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Version</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
 <span class="p">}</span>
