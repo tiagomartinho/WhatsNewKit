@@ -34,6 +34,9 @@
                 <a href="Classes/InMemoryWhatsNewVersionStore.html">InMemoryWhatsNewVersionStore</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/KeyValueWhatsNewVersionStore.html">KeyValueWhatsNewVersionStore</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a>
               </li>
               <li class="nav-group-task">
@@ -93,9 +96,6 @@
           <li class="nav-group-name">
             <a href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Structs/KeyValueWhatsNewVersionStore.html">KeyValueWhatsNewVersionStore</a>
-              </li>
               <li class="nav-group-task">
                 <a href="Structs/WhatsNew.html">WhatsNew</a>
               </li>
@@ -192,7 +192,7 @@ it, simply add the following line to your Podfile:</p>
 
 <p>Run <code>carthage update --platform iOS</code> to build the framework and drag the built <code>WhatsNewKit.framework</code> into your Xcode project. </p>
 
-<p>On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework path as mentioned in <a href="https://github.com/Carthage/Carthage/blob/master/README.md">Carthage Getting started Step 4, 5 and 6</a></p>
+<p>On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework path as mentioned in <a href="https://github.com/Carthage/Carthage/blob/master/README.md#if-youre-building-for-ios-tvos-or-watchos">Carthage Getting started Step 4, 5 and 6</a></p>
 <h3 id='manually' class='heading'>Manually</h3>
 
 <p>If you prefer not to use any of the aforementioned dependency managers, you can integrate WhatsNewKit into your project manually. Simply drag the <code>Sources</code> Folder into your Xcode project.</p>
@@ -308,7 +308,7 @@ it, simply add the following line to your Podfile:</p>
 <td>The <code>centered</code> layout aligns the image as well as the text in center.</td>
 </tr>
 </tbody></table>
-<pre class="highlight swift"><code><span class="c1">/// Default Layout</span>
+<pre class="highlight swift"><code><span class="c1">// Default Layout</span>
 <span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="o">.</span><span class="k">default</span>
 
 <span class="c1">// Centered Layout</span>
@@ -317,6 +317,22 @@ it, simply add the following line to your Podfile:</p>
 
 <blockquote>
 <p>☝️ By default the ItemsView layout is set to <code>default</code>.</p>
+</blockquote>
+<h3 id='imagesize' class='heading'>ImageSize</h3>
+
+<p>In order to define the size of your images for each of your feature you can set an <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BItemsView.swift">ImageSize</a> on the <code>ItemsView</code> configuration.</p>
+<pre class="highlight swift"><code><span class="c1">// Use the original image size as it is</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">imageSize</span> <span class="o">=</span> <span class="o">.</span><span class="n">original</span>
+
+<span class="c1">// Use the preferred image size which fits perfectly :)</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">imageSize</span> <span class="o">=</span> <span class="o">.</span><span class="n">preferred</span>
+
+<span class="c1">// Use a custom height for each image</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">imageSize</span> <span class="o">=</span> <span class="o">.</span><span class="nf">fixed</span><span class="p">(</span><span class="nv">height</span><span class="p">:</span> <span class="mi">25</span><span class="p">)</span>
+</code></pre>
+
+<blockquote>
+<p>☝️ By default the ItemsView ImageSize  is set to <code>preferred</code>.</p>
 </blockquote>
 <h3 id='animation' class='heading'>Animation</h3>
 
@@ -348,6 +364,25 @@ it, simply add the following line to your Podfile:</p>
     <span class="c1">// settings: Preferred duration and delay</span>
 <span class="p">})</span>
 </code></pre>
+<h3 id='secondary-title-color' class='heading'>Secondary Title Color</h3>
+
+<p>By setting a <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BTitleView.swift">SecondaryColor</a> on the TitleView you can change the color of certain characters.</p>
+
+<p><img align="right" width="360" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/SecondaryColor.jpg" alt="SecondaryColor" /></p>
+<pre class="highlight swift"><code><span class="c1">// Set secondary color on TitleView Configuration</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">titleView</span><span class="o">.</span><span class="n">secondaryColor</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span>
+    <span class="c1">// The start index</span>
+    <span class="nv">startIndex</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="c1">// The length of characters</span>
+    <span class="nv">length</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="c1">// The secondary color to apply </span>
+    <span class="nv">color</span><span class="p">:</span> <span class="o">.</span><span class="n">whatsNewKitLightBlue</span>
+<span class="p">)</span>
+</code></pre>
+
+<blockquote>
+<p>☝️ By default the secondaryColor is set to <code>nil</code>.</p>
+</blockquote>
 <h3 id='detailbutton' class='heading'>DetailButton</h3>
 
 <p><img width="150" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/detailButton.jpg" alt="DetailButton"></p>
@@ -620,6 +655,7 @@ it, simply add the following line to your Podfile:</p>
 <li><a href="https://medium.mybridge.co/swift-open-source-projects-of-the-month-v-june-2018-f9ce1239eee4">MyBridge - Open Source Swift Projects (June 2018)</a></li>
 <li><a href="http://theiostimes.com/issue-44.html">The iOS Times</a></li>
 <li><a href="https://dzone.com/articles/this-week-in-mobile-11-june-2018">DZone</a></li>
+<li><a href="https://youtu.be/zCHEpN1Wgz4">Brian Advent</a></li>
 </ul>
 <h2 id='contributing' class='heading'>Contributing</h2>
 
@@ -654,7 +690,7 @@ THE SOFTWARE.
         </section>
         <section id="footer">
           <p>Copyright 2018 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
