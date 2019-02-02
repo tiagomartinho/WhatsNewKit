@@ -35,9 +35,6 @@
                 <a href="../../Classes/InMemoryWhatsNewVersionStore.html">InMemoryWhatsNewVersionStore</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Classes/KeyValueWhatsNewVersionStore.html">KeyValueWhatsNewVersionStore</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../../Classes/WhatsNewViewController.html">WhatsNewViewController</a>
               </li>
               <li class="nav-group-task">
@@ -76,7 +73,7 @@
                 <a href="../../Extensions/UIColor.html">UIColor</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Extensions/WhatsNewItemsView.html">WhatsNewItemsView</a>
+                <a href="../../Extensions/WhatsNewItemsViewController.html">WhatsNewItemsViewController</a>
               </li>
             </ul>
           </li>
@@ -97,6 +94,9 @@
           <li class="nav-group-name">
             <a href="../../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/KeyValueWhatsNewVersionStore.html">KeyValueWhatsNewVersionStore</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../../Structs/WhatsNew.html">WhatsNew</a>
               </li>
@@ -124,7 +124,7 @@
             <h1>Configuration</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Configuration</span> <span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Configuration</span></code></pre>
 
                 </div>
               </div>
@@ -133,6 +133,13 @@
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -272,6 +279,33 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV13padAdjustmentyyAEzcvp"></a>
+                    <a name="//apple_ref/swift/Property/padAdjustment" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV13padAdjustmentyyAEzcvp">padAdjustment</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The iPad Adjustment Closure</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">padAdjustment</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/Configuration.html#/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV13PadAdjustmenta">PadAdjustment</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV9tintColorSo7UIColorCvp"></a>
                     <a name="//apple_ref/swift/Property/tintColor" class="dashAnchor"></a>
                     <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV9tintColorSo7UIColorCvp">tintColor</a>
@@ -296,12 +330,23 @@
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initializer"></a>
+                <a name="//apple_ref/swift/Section/Initializer" class="dashAnchor"></a>
+                <a href="#/Initializer">
+                  <h3 class="section-name">Initializer</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV5theme15backgroundColor05titleD005itemsD012detailButton010completionM0AeC5ThemeV_So7UIColorCAC05TitleD0VAC05ItemsD0VAC06DetailM0VSgAC010CompletionM0Vtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(theme:backgroundColor:titleView:itemsView:detailButton:completionButton:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV5theme15backgroundColor05titleD005itemsD012detailButton010completionM0AeC5ThemeV_So7UIColorCAC05TitleD0VAC05ItemsD0VAC06DetailM0VSgAC010CompletionM0Vtcfc">init(theme:backgroundColor:titleView:itemsView:detailButton:completionButton:)</a>
+                    <a name="/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV5theme15backgroundColor05titleD005itemsD012detailButton010completionM013padAdjustmentAeC5ThemeV_So7UIColorCAC05TitleD0VAC05ItemsD0VAC06DetailM0VSgAC010CompletionM0VyAEzctcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(theme:backgroundColor:titleView:itemsView:detailButton:completionButton:padAdjustment:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV5theme15backgroundColor05titleD005itemsD012detailButton010completionM013padAdjustmentAeC5ThemeV_So7UIColorCAC05TitleD0VAC05ItemsD0VAC06DetailM0VSgAC010CompletionM0VyAEzctcfc">init(theme:backgroundColor:titleView:itemsView:detailButton:completionButton:padAdjustment:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -321,7 +366,8 @@
             <span class="nv">titleView</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/TitleView.html">TitleView</a></span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(),</span>
             <span class="nv">itemsView</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/ItemsView.html">ItemsView</a></span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(),</span>
             <span class="nv">detailButton</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/DetailButton.html">DetailButton</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-            <span class="nv">completionButton</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/CompletionButton.html">CompletionButton</a></span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">())</span></code></pre>
+            <span class="nv">completionButton</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/CompletionButton.html">CompletionButton</a></span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(),</span>
+            <span class="nv">padAdjustment</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/Configuration.html#/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV13PadAdjustmenta">PadAdjustment</a></span> <span class="o">=</span> <span class="kt">Configuration</span><span class="o">.</span><span class="n"><a href="../../Classes/WhatsNewViewController/Configuration.html#/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV20defaultPadAdjustmentyyAEzcvpZ">defaultPadAdjustment</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -401,8 +447,85 @@
                                 </div>
                               </td>
                             </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>padAdjustment</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The The iPad Adjustment Closure. Default value <code><a href="../../Classes/WhatsNewViewController/Configuration.html#/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV20defaultPadAdjustmentyyAEzcvpZ">defaultPadAdjustment</a></code></p>
+                                </div>
+                              </td>
+                            </tr>
                           </tbody>
                         </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/PadAdjustment"></a>
+                <a name="//apple_ref/swift/Section/PadAdjustment" class="dashAnchor"></a>
+                <a href="#/PadAdjustment">
+                  <h3 class="section-name">PadAdjustment</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV13PadAdjustmenta"></a>
+                    <a name="//apple_ref/swift/Alias/PadAdjustment" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV13PadAdjustmenta">PadAdjustment</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Pad Adjustment Closure</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">PadAdjustment</span> <span class="o">=</span> <span class="p">(</span><span class="k">inout</span> <span class="kt"><a href="../../Classes/WhatsNewViewController.html">WhatsNewViewController</a></span><span class="o">.</span><span class="kt">Configuration</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV20defaultPadAdjustmentyyAEzcvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/defaultPadAdjustment" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV20defaultPadAdjustmentyyAEzcvpZ">defaultPadAdjustment</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The default iPad Adjustment closure</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">defaultPadAdjustment</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController.html">WhatsNewViewController</a></span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="kt"><a href="../../Classes/WhatsNewViewController/Configuration.html#/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV13PadAdjustmenta">PadAdjustment</a></span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -577,7 +700,7 @@
         </section>
         <section id="footer">
           <p>Copyright 2018 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

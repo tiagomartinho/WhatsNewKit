@@ -34,9 +34,6 @@
                 <a href="Classes/InMemoryWhatsNewVersionStore.html">InMemoryWhatsNewVersionStore</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/KeyValueWhatsNewVersionStore.html">KeyValueWhatsNewVersionStore</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a>
               </li>
               <li class="nav-group-task">
@@ -75,7 +72,7 @@
                 <a href="Extensions/UIColor.html">UIColor</a>
               </li>
               <li class="nav-group-task">
-                <a href="Extensions/WhatsNewItemsView.html">WhatsNewItemsView</a>
+                <a href="Extensions/WhatsNewItemsViewController.html">WhatsNewItemsViewController</a>
               </li>
             </ul>
           </li>
@@ -96,6 +93,9 @@
           <li class="nav-group-name">
             <a href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/KeyValueWhatsNewVersionStore.html">KeyValueWhatsNewVersionStore</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Structs/WhatsNew.html">WhatsNew</a>
               </li>
@@ -235,7 +235,7 @@ it, simply add the following line to your Podfile:</p>
 <p>As mentioned before <code>WhatsNewKit</code> can be fully customized to your needs. The Advanced section will explain all configuration possibilities and features of <code>WhatsNewKit</code> in detail. First off it&rsquo;s important to understand the components of the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> in order to customize the behaviour and <code>UI</code>-Design.</p>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/UILayout.jpg" width="500">
+<img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/UILayout.gif">
 </p>
 <h3 id='whatsnewviewcontroller-configuration' class='heading'>WhatsNewViewController.Configuration</h3>
 
@@ -318,6 +318,15 @@ it, simply add the following line to your Podfile:</p>
 <blockquote>
 <p>☝️ By default the ItemsView layout is set to <code>default</code>.</p>
 </blockquote>
+<h3 id='insets' class='heading'>Insets</h3>
+
+<p>Additionally, if you wish you can modify the layout insets of the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> components.</p>
+<pre class="highlight swift"><code><span class="c1">// Set TitleView Insets (Default values)</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">titleView</span><span class="o">.</span><span class="n">insets</span> <span class="o">=</span> <span class="kt">UIEdgeInsets</span><span class="p">(</span><span class="nv">top</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">left</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="c1">// Increase the CompletionButton Bottom Inset </span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">completionButton</span><span class="o">.</span><span class="n">insets</span><span class="o">.</span><span class="n">bottom</span> <span class="o">+=</span> <span class="mi">10</span>
+</code></pre>
 <h3 id='imagesize' class='heading'>ImageSize</h3>
 
 <p>In order to define the size of your images for each of your feature you can set an <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BItemsView.swift">ImageSize</a> on the <code>ItemsView</code> configuration.</p>
@@ -472,6 +481,21 @@ it, simply add the following line to your Podfile:</p>
 
 <blockquote>
 <p>☝️ In default the <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BHapticFeedback.swift">HapticFeedback</a> is <code>nil</code> indicating no haptic feedback should be executed.</p>
+</blockquote>
+<h3 id='ipad-adjustments' class='heading'>iPad Adjustments</h3>
+
+<p>If you wish to modify the <code><a href="Classes/WhatsNewViewController/Configuration.html">WhatsNewViewController.Configuration</a></code> when presenting it on an iPad you can set the <code>padAdjustment</code> closure.</p>
+<pre class="highlight swift"><code><span class="c1">// Set PadAdjustment closure</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">padAdjustment</span> <span class="o">=</span> <span class="p">{</span> <span class="n">configuration</span> <span class="k">in</span>
+     <span class="c1">// Adjust TitleView FontSize</span>
+     <span class="n">configuration</span><span class="o">.</span><span class="n">titleView</span><span class="o">.</span><span class="n">titleFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">)</span>
+     <span class="c1">// Invoke default PadAdjustments (Adjusts Insets for iPad)</span>
+     <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="o">.</span><span class="nf">defaultPadAdjustment</span><span class="p">(</span><span class="o">&amp;</span><span class="n">configuration</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<blockquote>
+<p>☝️ In default the <code><a href="Classes/WhatsNewViewController/Configuration.html#/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV20defaultPadAdjustmentyyAEzcvpZ">WhatsNewViewController.Configuration.defaultPadAdjustment</a></code> will be invoked.</p>
 </blockquote>
 <h3 id='whatsnewversionstore' class='heading'>WhatsNewVersionStore</h3>
 
@@ -665,7 +689,7 @@ it, simply add the following line to your Podfile:</p>
 <p>The <code><a href="Structs/WhatsNew/Item.html">WhatsNew.Item</a></code> images (<a href="https://icons8.com/icon/62856/github">icons8-github</a>, <a href="https://icons8.com/icon/61018/puzzle">icons8-puzzle</a>, <a href="https://icons8.com/icon/59733/approval">icons8-approval</a>, <a href="https://icons8.com/icon/68826/picture">icons8-picture</a>) which are seen on the screenshots and inside the example application are taken from <a href="https://icons8.com/">icons8.com</a> which are licensed under <a href="https://creativecommons.org/licenses/by-nd/3.0/">Creative Commons Attribution-NoDerivs 3.0 Unported</a>.</p>
 <h2 id='license' class='heading'>License</h2>
 <pre class="highlight plaintext"><code>WhatsNewKit
-Copyright (c) 2018 Sven Tiigi &lt;sven.tiigi@gmail.com&gt;
+Copyright (c) 2019 Sven Tiigi &lt;sven.tiigi@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -690,7 +714,7 @@ THE SOFTWARE.
         </section>
         <section id="footer">
           <p>Copyright 2018 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

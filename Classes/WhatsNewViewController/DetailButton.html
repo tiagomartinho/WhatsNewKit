@@ -35,9 +35,6 @@
                 <a href="../../Classes/InMemoryWhatsNewVersionStore.html">InMemoryWhatsNewVersionStore</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Classes/KeyValueWhatsNewVersionStore.html">KeyValueWhatsNewVersionStore</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../../Classes/WhatsNewViewController.html">WhatsNewViewController</a>
               </li>
               <li class="nav-group-task">
@@ -76,7 +73,7 @@
                 <a href="../../Extensions/UIColor.html">UIColor</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Extensions/WhatsNewItemsView.html">WhatsNewItemsView</a>
+                <a href="../../Extensions/WhatsNewItemsViewController.html">WhatsNewItemsViewController</a>
               </li>
             </ul>
           </li>
@@ -97,6 +94,9 @@
           <li class="nav-group-name">
             <a href="../../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/KeyValueWhatsNewVersionStore.html">KeyValueWhatsNewVersionStore</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../../Structs/WhatsNew.html">WhatsNew</a>
               </li>
@@ -299,9 +299,36 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11WhatsNewKit0aB14ViewControllerC12DetailButtonV5title6action14hapticFeedback0H4Font0H5Color9animationAESS_AE6ActionOAC06HapticK0OSgSo6UIFontCSo7UIColorCAC9AnimationOSgtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(title:action:hapticFeedback:titleFont:titleColor:animation:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC12DetailButtonV5title6action14hapticFeedback0H4Font0H5Color9animationAESS_AE6ActionOAC06HapticK0OSgSo6UIFontCSo7UIColorCAC9AnimationOSgtcfc">init(title:action:hapticFeedback:titleFont:titleColor:animation:)</a>
+                    <a name="/s:11WhatsNewKit0aB14ViewControllerC12DetailButtonV12bottomOffset12CoreGraphics7CGFloatVvp"></a>
+                    <a name="//apple_ref/swift/Property/bottomOffset" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC12DetailButtonV12bottomOffset12CoreGraphics7CGFloatVvp">bottomOffset</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Bottom Layout Offset</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">bottomOffset</span><span class="p">:</span> <span class="kt">CGFloat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11WhatsNewKit0aB14ViewControllerC12DetailButtonV5title6action14hapticFeedback0H4Font0H5Color9animation12bottomOffsetAESS_AE6ActionOAC06HapticK0OSgSo6UIFontCSo7UIColorCAC9AnimationOSg12CoreGraphics7CGFloatVtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(title:action:hapticFeedback:titleFont:titleColor:animation:bottomOffset:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC12DetailButtonV5title6action14hapticFeedback0H4Font0H5Color9animation12bottomOffsetAESS_AE6ActionOAC06HapticK0OSgSo6UIFontCSo7UIColorCAC9AnimationOSg12CoreGraphics7CGFloatVtcfc">init(title:action:hapticFeedback:titleFont:titleColor:animation:bottomOffset:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -321,7 +348,8 @@
             <span class="nv">hapticFeedback</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/HapticFeedback.html">HapticFeedback</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
             <span class="nv">titleFont</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">17</span><span class="p">),</span>
             <span class="nv">titleColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">whatsNewKitBlue</span><span class="p">,</span>
-            <span class="nv">animation</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/Animation.html">Animation</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+            <span class="nv">animation</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/Animation.html">Animation</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+            <span class="nv">bottomOffset</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -401,6 +429,18 @@
                                 </div>
                               </td>
                             </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bottomOffset</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Bottom Layout Offset. Default value <code>10</code></p>
+                                </div>
+                              </td>
+                            </tr>
                           </tbody>
                         </table>
                       </div>
@@ -452,7 +492,7 @@
         </section>
         <section id="footer">
           <p>Copyright 2018 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

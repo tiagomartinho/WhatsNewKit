@@ -35,9 +35,6 @@
                 <a href="../../Classes/InMemoryWhatsNewVersionStore.html">InMemoryWhatsNewVersionStore</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Classes/KeyValueWhatsNewVersionStore.html">KeyValueWhatsNewVersionStore</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../../Classes/WhatsNewViewController.html">WhatsNewViewController</a>
               </li>
               <li class="nav-group-task">
@@ -76,7 +73,7 @@
                 <a href="../../Extensions/UIColor.html">UIColor</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Extensions/WhatsNewItemsView.html">WhatsNewItemsView</a>
+                <a href="../../Extensions/WhatsNewItemsViewController.html">WhatsNewItemsViewController</a>
               </li>
             </ul>
           </li>
@@ -97,6 +94,9 @@
           <li class="nav-group-name">
             <a href="../../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/KeyValueWhatsNewVersionStore.html">KeyValueWhatsNewVersionStore</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../../Structs/WhatsNew.html">WhatsNew</a>
               </li>
@@ -353,9 +353,36 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11WhatsNewKit0aB14ViewControllerC05ItemsD0V9titleFont0G5Color08subtitleH00jI09imageSize13autoTintImage6layout9animationAESo6UIFontC_So7UIColorCAoqE0oL0OSbAE6LayoutOAC9AnimationOSgtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(titleFont:titleColor:subtitleFont:subtitleColor:imageSize:autoTintImage:layout:animation:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC05ItemsD0V9titleFont0G5Color08subtitleH00jI09imageSize13autoTintImage6layout9animationAESo6UIFontC_So7UIColorCAoqE0oL0OSbAE6LayoutOAC9AnimationOSgtcfc">init(titleFont:titleColor:subtitleFont:subtitleColor:imageSize:autoTintImage:layout:animation:)</a>
+                    <a name="/s:11WhatsNewKit0aB14ViewControllerC05ItemsD0V6insetsSo12UIEdgeInsetsVvp"></a>
+                    <a name="//apple_ref/swift/Property/insets" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC05ItemsD0V6insetsSo12UIEdgeInsetsVvp">insets</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Insets</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">insets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11WhatsNewKit0aB14ViewControllerC05ItemsD0V9titleFont0G5Color08subtitleH00jI09imageSize13autoTintImage6layout9animation6insetsAESo6UIFontC_So7UIColorCAprE0oL0OSbAE6LayoutOAC9AnimationOSgSo12UIEdgeInsetsVtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(titleFont:titleColor:subtitleFont:subtitleColor:imageSize:autoTintImage:layout:animation:insets:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC05ItemsD0V9titleFont0G5Color08subtitleH00jI09imageSize13autoTintImage6layout9animation6insetsAESo6UIFontC_So7UIColorCAprE0oL0OSbAE6LayoutOAC9AnimationOSgSo12UIEdgeInsetsVtcfc">init(titleFont:titleColor:subtitleFont:subtitleColor:imageSize:autoTintImage:layout:animation:insets:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -377,7 +404,8 @@
             <span class="nv">imageSize</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/ItemsView/ImageSize.html">ImageSize</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">preferred</span><span class="p">,</span>
             <span class="nv">autoTintImage</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
             <span class="nv">layout</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/ItemsView/Layout.html">Layout</a></span> <span class="o">=</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span>
-            <span class="nv">animation</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/Animation.html">Animation</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+            <span class="nv">animation</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/Animation.html">Animation</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+            <span class="nv">insets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="o">=</span> <span class="kt">UIEdgeInsets</span><span class="p">(</span><span class="nv">top</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="nv">left</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span> <span class="mi">20</span><span class="p">))</span></code></pre>
 
                         </div>
                       </div>
@@ -484,12 +512,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>spacing</em>
+                                <em>insets</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The Spacing. Default value <code>default</code></p>
+                                  <p>The UIEdgeInsets. Default value <code>top: 15, left: 20, bottom: 5, right: 20</code></p>
                                 </div>
                               </td>
                             </tr>
@@ -583,7 +611,7 @@
         </section>
         <section id="footer">
           <p>Copyright 2018 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
