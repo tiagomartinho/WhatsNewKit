@@ -162,7 +162,7 @@
 <p><br/></p>
 
 <p align="center">
-   <img width="600" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/WhatsNewKit.gif" alt="Example">
+   <img width="600" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/WhatsNewKit.gif" alt="Demo">
 </p>
 <h2 id='features' class='heading'>Features</h2>
 
@@ -175,6 +175,10 @@
 <h2 id='example' class='heading'>Example</h2>
 
 <p>The example Application is an excellent way to see <code>WhatsNewKit</code> in action. You get a brief look of the available configuration options and how they affect the look and feel of the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code>. Simply open the <code>WhatsNewKit.xcodeproj</code> and run the <code>WhatsNewKit-Example</code> scheme.</p>
+
+<p align="center">
+<img width="80%" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/ExampleApp.png" alt="Example App">
+</p>
 <h2 id='installation' class='heading'>Installation</h2>
 <h3 id='cocoapods' class='heading'>CocoaPods</h3>
 
@@ -203,7 +207,9 @@ it, simply add the following line to your Podfile:</p>
 <blockquote>
 <p>👨‍💻 Please see the <a href="https://github.com/SvenTiigi/WhatsNewKit#advanced">Advanced</a> section for further configuration options and features.</p>
 </blockquote>
-<pre class="highlight swift"><code><span class="c1">// Initialize WhatsNew</span>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">WhatsNewKit</span>
+
+<span class="c1">// Initialize WhatsNew</span>
 <span class="k">let</span> <span class="nv">whatsNew</span> <span class="o">=</span> <span class="kt">WhatsNew</span><span class="p">(</span>
     <span class="c1">// The Title</span>
     <span class="nv">title</span><span class="p">:</span> <span class="s">"WhatsNewKit"</span><span class="p">,</span>
@@ -212,12 +218,12 @@ it, simply add the following line to your Podfile:</p>
         <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Item</span><span class="p">(</span>
             <span class="nv">title</span><span class="p">:</span> <span class="s">"Installation"</span><span class="p">,</span>
             <span class="nv">subtitle</span><span class="p">:</span> <span class="s">"You can install WhatsNewKit via CocoaPods or Carthage"</span><span class="p">,</span>
-            <span class="nv">image</span><span class="p">:</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"installation"</span><span class="p">)</span>
+            <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"installation"</span><span class="p">)</span>
         <span class="p">),</span>
         <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Item</span><span class="p">(</span>
             <span class="nv">title</span><span class="p">:</span> <span class="s">"Open Source"</span><span class="p">,</span>
             <span class="nv">subtitle</span><span class="p">:</span> <span class="s">"Contributions are very welcome 👨‍💻"</span><span class="p">,</span>
-            <span class="nv">image</span><span class="p">:</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"openSource"</span><span class="p">)</span>
+            <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"openSource"</span><span class="p">)</span>
         <span class="p">)</span>
     <span class="p">]</span>
 <span class="p">)</span>
@@ -235,7 +241,7 @@ it, simply add the following line to your Podfile:</p>
 <p>As mentioned before <code>WhatsNewKit</code> can be fully customized to your needs. The Advanced section will explain all configuration possibilities and features of <code>WhatsNewKit</code> in detail. First off it&rsquo;s important to understand the components of the <code><a href="Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> in order to customize the behaviour and <code>UI</code>-Design.</p>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/UILayout.gif">
+<img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/UILayout.gif" alt="UILayout">
 </p>
 <h3 id='whatsnewviewcontroller-configuration' class='heading'>WhatsNewViewController.Configuration</h3>
 
@@ -257,13 +263,21 @@ it, simply add the following line to your Podfile:</p>
     <span class="nv">configuration</span><span class="p">:</span> <span class="n">configuration</span>
 <span class="p">)</span>
 </code></pre>
-<h3 id='theme' class='heading'>Theme</h3>
+<h3 id='theme' class='heading'>Theme 🌄</h3>
 
 <p>A <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BConfiguration.swift">Theme</a> allows you to group the customization of a <code><a href="Classes/WhatsNewViewController/Configuration.html">WhatsNewViewController.Configuration</a></code>. <code>WhatsNewKit</code> implemented predefined Themes which are available as static properties both in white and dark mode. Or you create your very own Theme to configure it to your needs.</p>
 
-<p align="center">
-<img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/Templates.jpg" width="600">
-</p>
+<table><thead>
+<tr>
+<th><code>.darkRed</code></th>
+<th><code>.whiteRed</code></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><p align="center"> <img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/Theme_darkRed.jpg" width="70%" alt="Theme Dark Red"/> </p></td>
+<td><p align="center"> <img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/Theme_whiteRed.jpg" width="70%" alt="Theme White Red" /> </p></td>
+</tr>
+</tbody></table>
 <pre class="highlight swift"><code><span class="c1">// Configuration with predefined Dark Red Theme</span>
 <span class="k">let</span> <span class="nv">darkRed</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="p">(</span>
     <span class="nv">theme</span><span class="p">:</span> <span class="o">.</span><span class="n">darkRed</span>
@@ -289,7 +303,7 @@ it, simply add the following line to your Podfile:</p>
 </code></pre>
 
 <p>For a full overview of the available predefined Themes check out the <a href="https://github.com/SvenTiigi/WhatsNewKit/tree/master/Example">Example-Application</a>.</p>
-<h3 id='layout' class='heading'>Layout</h3>
+<h3 id='layout' class='heading'>Layout 📐</h3>
 
 <p><code>WhatsNewKit</code> comes with two predefined <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BItemsView.swift"><code>ItemsView.Layouts</code></a>. </p>
 
@@ -300,8 +314,8 @@ it, simply add the following line to your Podfile:</p>
 </tr>
 </thead><tbody>
 <tr>
-<td><img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/LayoutDefault.png" /></td>
-<td><img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/LayoutCentered.png" /></td>
+<td><img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/LayoutDefault.png" alt="Default Layout" /></td>
+<td><img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/LayoutCentered.png" alt="Centered Layout" /></td>
 </tr>
 <tr>
 <td>The <code>default</code> layout shows an image on the left side and the text on the right side.</td>
@@ -316,7 +330,37 @@ it, simply add the following line to your Podfile:</p>
 </code></pre>
 
 <blockquote>
-<p>☝️ By default the ItemsView layout is set to <code>default</code>.</p>
+<p>☝️ In default the ItemsView layout is set to <code>default</code>.</p>
+</blockquote>
+<h3 id='contentmode' class='heading'>ContentMode 📏</h3>
+
+<p>Setting the <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BItemsView.swift"><code>ContentMode</code></a> in the <code>ItemsView</code> Configuration will adjust for how your features are arranged along the axis.</p>
+
+<table><thead>
+<tr>
+<th>Top</th>
+<th>Center</th>
+<th>Fill</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/ContentMode_Top.jpg" alt="ContentMode Top" /></td>
+<td><img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/ContentMode_Center.jpg" alt="ContentMode Center" /></td>
+<td><img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/ContentMode_Fill.jpg" alt="ContentMode Fill" /></td>
+</tr>
+</tbody></table>
+<pre class="highlight swift"><code><span class="c1">// ContentMode Top</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">contentMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">top</span>
+
+<span class="c1">// ContentMode Center</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">contentMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">center</span>
+
+<span class="c1">// ContentMode Fill</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">contentMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">fill</span>
+</code></pre>
+
+<blockquote>
+<p>☝️ In default the ItemsView ContentMode  is set to <code>top</code>.</p>
 </blockquote>
 <h3 id='insets' class='heading'>Insets</h3>
 
@@ -341,9 +385,9 @@ it, simply add the following line to your Podfile:</p>
 </code></pre>
 
 <blockquote>
-<p>☝️ By default the ItemsView ImageSize  is set to <code>preferred</code>.</p>
+<p>☝️ In default the ItemsView ImageSize  is set to <code>preferred</code>.</p>
 </blockquote>
-<h3 id='animation' class='heading'>Animation</h3>
+<h3 id='animation' class='heading'>Animation 🎬</h3>
 
 <p><img align="right" width="300" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/Animations.gif" alt="Animations" /></p>
 
@@ -390,7 +434,7 @@ it, simply add the following line to your Podfile:</p>
 </code></pre>
 
 <blockquote>
-<p>☝️ By default the secondaryColor is set to <code>nil</code>.</p>
+<p>☝️ In default the secondaryColor is set to <code>nil</code>.</p>
 </blockquote>
 <h3 id='detailbutton' class='heading'>DetailButton</h3>
 
@@ -462,7 +506,7 @@ it, simply add the following line to your Podfile:</p>
     <span class="p">})</span>
 <span class="p">)</span>
 </code></pre>
-<h3 id='hapticfeedback' class='heading'>HapticFeedback</h3>
+<h3 id='hapticfeedback' class='heading'>HapticFeedback 📳</h3>
 
 <p>You can enable on both <code>DetailButton</code> and <code>CompletionButton</code> haptic feedback when the user pressed one of these buttons. Either by setting the property or passing it to the initializer.</p>
 <pre class="highlight swift"><code><span class="c1">// Impact Feedback</span>
@@ -497,7 +541,7 @@ it, simply add the following line to your Podfile:</p>
 <blockquote>
 <p>☝️ In default the <code><a href="Classes/WhatsNewViewController/Configuration.html#/s:11WhatsNewKit0aB14ViewControllerC13ConfigurationV20defaultPadAdjustmentyyAEzcvpZ">WhatsNewViewController.Configuration.defaultPadAdjustment</a></code> will be invoked.</p>
 </blockquote>
-<h3 id='whatsnewversionstore' class='heading'>WhatsNewVersionStore</h3>
+<h3 id='whatsnewversionstore' class='heading'>WhatsNewVersionStore 💾</h3>
 
 <p align="center">
    <img width="750" src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/WhatsNewVersionStore.jpg" alt="WhatsNewVersionStore">
@@ -610,7 +654,7 @@ it, simply add the following line to your Podfile:</p>
 <span class="p">)</span>
 
 <span class="c1">// Use a String literal</span>
-<span class="k">let</span> <span class="nv">version</span> <span class="o">=</span> <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Version</span><span class="p">(</span><span class="nv">stringLiteral</span><span class="p">:</span> <span class="s">"1.0.0"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">version</span><span class="p">:</span> <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Version</span> <span class="o">=</span> <span class="s">"1.0.0"</span>
 
 <span class="c1">// Current Version in Bundle (Default)</span>
 <span class="k">let</span> <span class="nv">version</span> <span class="o">=</span> <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Version</span><span class="o">.</span><span class="nf">current</span><span class="p">()</span>
@@ -680,6 +724,7 @@ it, simply add the following line to your Podfile:</p>
 <li><a href="http://theiostimes.com/issue-44.html">The iOS Times</a></li>
 <li><a href="https://dzone.com/articles/this-week-in-mobile-11-june-2018">DZone</a></li>
 <li><a href="https://youtu.be/zCHEpN1Wgz4">Brian Advent</a></li>
+<li><a href="https://medium.mybridge.co/23-amazing-ios-ui-libraries-written-in-swift-for-the-past-year-v-2019-3e5456318768">23 Amazing iOS UI Libraries written in Swift for the Past Year (v.2019)</a></li>
 </ul>
 <h2 id='contributing' class='heading'>Contributing</h2>
 
