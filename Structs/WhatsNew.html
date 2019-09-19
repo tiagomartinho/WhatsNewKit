@@ -124,11 +124,49 @@
             <h1>WhatsNew</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">WhatsNew</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">WhatsNew</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
 
                 </div>
               </div>
-            <p>WhatsNew</p>
+            <p>The <code>WhatsNew</code> struct to declare your new app features.
+Read more on: <a href="https://github.com/SvenTiigi/WhatsNewKit">https://github.com/SvenTiigi/WhatsNewKit</a></p>
+
+<p>In default the <code>version</code> property will be initialized by reading out the current app version from the main bundle.</p>
+<h1 id='example' class='heading'>Example:</h1>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">WhatsNewKit</span>
+
+<span class="c1">// WhatsNew for your current app version</span>
+<span class="k">let</span> <span class="nv">whatsNew</span> <span class="o">=</span> <span class="kt">WhatsNew</span><span class="p">(</span>
+    <span class="c1">// The Title</span>
+    <span class="nv">title</span><span class="p">:</span> <span class="s">"WhatsNewKit"</span><span class="p">,</span>
+    <span class="c1">// The features you want to showcase</span>
+    <span class="nv">items</span><span class="p">:</span> <span class="p">[</span>
+        <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Item</span><span class="p">(</span>
+            <span class="nv">title</span><span class="p">:</span> <span class="s">"Installation"</span><span class="p">,</span>
+            <span class="nv">subtitle</span><span class="p">:</span> <span class="s">"You can install WhatsNewKit via CocoaPods or Carthage"</span><span class="p">,</span>
+            <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"installation"</span><span class="p">)</span>
+        <span class="p">),</span>
+        <span class="kt">WhatsNew</span><span class="o">.</span><span class="kt">Item</span><span class="p">(</span>
+            <span class="nv">title</span><span class="p">:</span> <span class="s">"Open Source"</span><span class="p">,</span>
+            <span class="nv">subtitle</span><span class="p">:</span> <span class="s">"Contributions are very welcome 👨‍💻"</span><span class="p">,</span>
+            <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"openSource"</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1">// WhatsNew for a specific app version</span>
+<span class="k">let</span> <span class="nv">whatsNew</span> <span class="o">=</span> <span class="kt">WhatsNew</span><span class="p">(</span>
+    <span class="c1">// The Title</span>
+    <span class="nv">title</span><span class="p">:</span> <span class="s">"WhatsNewKit"</span><span class="p">,</span>
+    <span class="c1">// The Version</span>
+    <span class="nv">version</span><span class="p">:</span> <span class="s">"1.0.1"</span><span class="p">,</span>
+    <span class="c1">// The features you want to showcase</span>
+    <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="p">)</span>
+</code></pre>
+<h1 id='note' class='heading'>Note:</h1>
+
+<p>See  the <code><a href="../Classes/WhatsNewViewController.html">WhatsNewViewController</a></code> to present your new app features.</p>
 
           </section>
           <section class="section task-group-section">
@@ -337,7 +375,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Item</span> <span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Item</span> <span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
 
                         </div>
                       </div>
@@ -376,7 +414,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Version</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">Version</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
 
                         </div>
                       </div>
@@ -389,7 +427,7 @@
         </section>
         <section id="footer">
           <p>Copyright 2018 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

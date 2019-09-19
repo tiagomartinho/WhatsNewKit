@@ -127,6 +127,13 @@
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/WhatsNewViewController"></a>
+                <a name="//apple_ref/swift/Section/WhatsNewViewController" class="dashAnchor"></a>
+                <a href="#/WhatsNewViewController">
+                  <h3 class="section-name">WhatsNewViewController</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -141,7 +148,74 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The WhatsNewViewController</p>
+                        <p>The <code>WhatsNewViewController</code> to easily showcase your awesome new app features.
+Read more on: <a href="https://github.com/SvenTiigi/WhatsNewKit">https://github.com/SvenTiigi/WhatsNewKit</a></p>
+
+<p>Simply pass your <code><a href="Structs/WhatsNew.html">WhatsNew</a></code> struct to the <code>WhatsNewViewController</code> initializer
+and present it.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">WhatsNewKit</span>
+
+<span class="c1">// Initialize WhatsNewViewController with WhatsNew</span>
+<span class="k">let</span> <span class="nv">whatsNewViewController</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="p">(</span>
+    <span class="nv">whatsNew</span><span class="p">:</span> <span class="n">whatsNew</span>
+<span class="p">)</span>
+
+<span class="c1">// Present it 🤩</span>
+<span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">whatsNewViewController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+</code></pre>
+<h1 id='custom-configuration' class='heading'>Custom Configuration</h1>
+
+<p>If you wish to customize the appearance of the <code>WhatsNewViewController</code> you can
+ initialize it with a configured <code><a href="Classes/WhatsNewViewController/Configuration.html">WhatsNewViewController.Configuration</a></code>.</p>
+<pre class="highlight swift"><code> <span class="c1">// Initialize default Configuration</span>
+ <span class="k">var</span> <span class="nv">configuration</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="p">()</span>
+
+ <span class="c1">// Customize the Configuration to your needs</span>
+ <span class="n">configuration</span><span class="o">.</span><span class="n">titleView</span><span class="o">.</span><span class="n">titleColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
+ <span class="c1">// ...</span>
+
+ <span class="c1">// Initialize WhatsNewViewController with custom configuration</span>
+ <span class="k">let</span> <span class="nv">whatsNewViewController</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="p">(</span>
+     <span class="nv">whatsNew</span><span class="p">:</span> <span class="n">whatsNew</span><span class="p">,</span>
+     <span class="nv">configuration</span><span class="p">:</span> <span class="n">configuration</span>
+ <span class="p">)</span>
+</code></pre>
+
+<p># Themes</p>
+
+<p>Beside the aforementioned custom configuration you can make use of predefined themes.</p>
+<pre class="highlight swift"><code> <span class="c1">// Initialize WhatsNewViewController with a theme</span>
+ <span class="k">let</span> <span class="nv">whatsNewViewController</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="p">(</span>
+     <span class="nv">whatsNew</span><span class="p">:</span> <span class="n">whatsNew</span><span class="p">,</span>
+     <span class="nv">configuration</span><span class="p">:</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">theme</span><span class="p">:</span> <span class="o">.</span><span class="n">darkRed</span><span class="p">)</span>
+ <span class="p">)</span>
+</code></pre>
+
+<p># WhatsNewVersionStore</p>
+
+<p>If you pass a <code><a href="Typealiases.html#/s:11WhatsNewKit0aB12VersionStorea">WhatsNewVersionStore</a></code> to the initializer will become <code>optional</code>.
+ The <code>WhatsNewViewController</code> will return nil during initialization if the <code>version</code> of your passed <code><a href="Structs/WhatsNew.html">WhatsNew</a></code> is
+ contained in the <code><a href="Typealiases.html#/s:11WhatsNewKit0aB12VersionStorea">WhatsNewVersionStore</a></code>.</p>
+<pre class="highlight swift"><code> <span class="c1">// Initialize WhatsNewViewController with WhatsNewVersionStore</span>
+ <span class="k">let</span> <span class="nv">whatsNewViewController</span><span class="p">:</span> <span class="kt">WhatsNewViewController</span><span class="p">?</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="p">(</span>
+     <span class="nv">whatsNew</span><span class="p">:</span> <span class="n">whatsNew</span><span class="p">,</span>
+     <span class="nv">versionStore</span><span class="p">:</span> <span class="n">myVersionStore</span>
+ <span class="p">)</span>
+
+ <span class="c1">// Check if WhatsNewViewController is available to present it.</span>
+ <span class="k">if</span> <span class="k">let</span> <span class="nv">controller</span> <span class="o">=</span> <span class="n">whatsNewViewController</span> <span class="p">{</span>
+     <span class="c1">// Present it as WhatsNewViewController is available</span>
+     <span class="c1">// after init with WhatsNewVersionStore</span>
+     <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">controller</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
+ <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+     <span class="c1">// WhatsNewViewController is `nil`</span>
+     <span class="c1">// this Version has already been presented</span>
+ <span class="p">}</span>
+</code></pre>
+
+<p>If the <code>version</code> is not contained in the <code><a href="Typealiases.html#/s:11WhatsNewKit0aB12VersionStorea">WhatsNewVersionStore</a></code> the <code>WhatsNewViewController</code> will
+ automatically save the presented version inside the passed <code><a href="Typealiases.html#/s:11WhatsNewKit0aB12VersionStorea">WhatsNewVersionStore</a></code> to ensure that the presentation
+ of your new app features only happens once.</p>
 
                         <a href="Classes/WhatsNewViewController.html" class="slightly-smaller">See more</a>
                       </div>
@@ -149,7 +223,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">WhatsNewViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">WhatsNewViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
 
                         </div>
                       </div>
@@ -188,7 +262,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">InMemoryWhatsNewVersionStore</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">InMemoryWhatsNewVersionStore</span></code></pre>
 
                         </div>
                       </div>
@@ -201,7 +275,7 @@
         </section>
         <section id="footer">
           <p>Copyright 2018 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
