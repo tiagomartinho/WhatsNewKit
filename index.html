@@ -46,9 +46,6 @@
                 <a href="Classes/WhatsNewViewController/Configuration.html">– Configuration</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/WhatsNewViewController/Theme.html">– Theme</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/WhatsNewViewController/DetailButton.html">– DetailButton</a>
               </li>
               <li class="nav-group-task">
@@ -59,6 +56,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Classes/WhatsNewViewController/TitleView.html">– TitleView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/WhatsNewViewController/Theme.html">– Theme</a>
               </li>
             </ul>
           </li>
@@ -201,7 +201,7 @@ it, simply add the following line to your Podfile:</p>
 
 <p>To integrate using Apple&rsquo;s <a href="https://swift.org/package-manager/">Swift Package Manager</a>, add the following as a dependency to your <code>Package.swift</code>:</p>
 <pre class="highlight swift"><code><span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
-    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/SvenTiigi/WhatsNewKit.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"1.2.0"</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/SvenTiigi/WhatsNewKit.git"</span><span class="p">,</span> <span class="nv">from</span><span class="p">:</span> <span class="s">"1.3.0"</span><span class="p">)</span>
 <span class="p">]</span>
 </code></pre>
 <h3 id='manually' class='heading'>Manually</h3>
@@ -304,40 +304,53 @@ it, simply add the following line to your Podfile:</p>
     <span class="c1">// ...</span>
 <span class="p">}</span>
 
+<span class="c1">// Initialize a Configuration with your Theme</span>
 <span class="k">let</span> <span class="nv">configuration</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="p">(</span>
     <span class="nv">theme</span><span class="p">:</span> <span class="n">myTheme</span>
 <span class="p">)</span>
 </code></pre>
 
 <p>For a full overview of the available predefined Themes check out the <a href="https://github.com/SvenTiigi/WhatsNewKit/tree/master/Example">Example-Application</a>.</p>
+<h4 id='ios-13-dark-mode' class='heading'>iOS 13 Dark-Mode</h4>
+
+<p>Use the <code>.red</code> Theme if you wish that a predefined Theme like <code>.darkRed</code> and <code>.whiteRed</code> automatically adapts to the current <a href="https://developer.apple.com/documentation/uikit/uiuserinterfacestyle">UserInterfaceStyle</a>.</p>
+<pre class="highlight swift"><code><span class="c1">// Configuration with predefine `red` Theme which auto adapts to the UserInterfaceStyle</span>
+<span class="c1">// in order to support iOS 13 Dark-Mode</span>
+<span class="k">let</span> <span class="nv">configuration</span> <span class="o">=</span> <span class="kt">WhatsNewViewController</span><span class="o">.</span><span class="kt">Configuration</span><span class="p">(</span>
+    <span class="nv">theme</span><span class="p">:</span> <span class="o">.</span><span class="n">red</span>
+<span class="p">)</span>
+</code></pre>
+
+<p>Dark-Mode compatible Themes: <code>.blue</code>, <code>.lightBlue</code>, <code>.orange</code>, <code>.purple</code>, <code>.red</code>, <code>.green</code> </p>
 <h3 id='layout' class='heading'>Layout 📐</h3>
 
 <p><code>WhatsNewKit</code> comes with two predefined <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BItemsView.swift"><code>ItemsView.Layouts</code></a>. </p>
 
 <table><thead>
 <tr>
-<th>Default</th>
+<th>Left</th>
 <th>Centered</th>
+<th>Right</th>
 </tr>
 </thead><tbody>
 <tr>
 <td><img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/LayoutDefault.png" alt="Default Layout" /></td>
 <td><img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/LayoutCentered.png" alt="Centered Layout" /></td>
-</tr>
-<tr>
-<td>The <code>default</code> layout shows an image on the left side and the text on the right side.</td>
-<td>The <code>centered</code> layout aligns the image as well as the text in center.</td>
+<td><img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/LayoutRight.png" alt="Right Layout" /></td>
 </tr>
 </tbody></table>
-<pre class="highlight swift"><code><span class="c1">// Default Layout</span>
+<pre class="highlight swift"><code><span class="c1">// Left Layout</span>
 <span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="o">.</span><span class="k">default</span>
 
 <span class="c1">// Centered Layout</span>
 <span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="o">.</span><span class="n">centered</span>
+
+<span class="c1">// Right Layout</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="o">.</span><span class="n">right</span>
 </code></pre>
 
 <blockquote>
-<p>☝️ In default the ItemsView layout is set to <code>default</code>.</p>
+<p>☝️ In default the ItemsView layout is set to <code>.left</code>.</p>
 </blockquote>
 <h3 id='contentmode' class='heading'>ContentMode 📏</h3>
 
@@ -733,6 +746,7 @@ it, simply add the following line to your Podfile:</p>
 <li><a href="https://youtu.be/zCHEpN1Wgz4">Brian Advent</a></li>
 <li><a href="https://medium.mybridge.co/23-amazing-ios-ui-libraries-written-in-swift-for-the-past-year-v-2019-3e5456318768">23 Amazing iOS UI Libraries written in Swift for the Past Year (v.2019)</a></li>
 <li><a href="https://indieiosfocus.com/issues/234">Indie iOS Focus Weekly</a></li>
+<li><a href="https://medium.com/better-programming/5-ios-libraries-that-will-inspire-your-creativity-26ee5837f9b7">5 iOS Libraries That Will Inspire Your Creativity</a></li>
 </ul>
 <h2 id='contributing' class='heading'>Contributing</h2>
 
@@ -767,7 +781,7 @@ THE SOFTWARE.
         </section>
         <section id="footer">
           <p>Copyright 2018 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
