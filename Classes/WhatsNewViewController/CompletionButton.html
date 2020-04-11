@@ -67,13 +67,16 @@
             <a href="../../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../../Extensions.html#/c:objc(cs)NSUbiquitousKeyValueStore">NSUbiquitousKeyValueStore</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../../Extensions/Sequence.html">Sequence</a>
               </li>
               <li class="nav-group-task">
                 <a href="../../Extensions/UIColor.html">UIColor</a>
               </li>
               <li class="nav-group-task">
-                <a href="../../Extensions/WhatsNewItemsViewController.html">WhatsNewItemsViewController</a>
+                <a href="../../Extensions.html#/c:objc(cs)NSUserDefaults">UserDefaults</a>
               </li>
             </ul>
           </li>
@@ -125,6 +128,7 @@
               <div class="declaration">
                 <div class="language">
                   <pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">CompletionButton</span> <span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../../Classes/WhatsNewViewController.html">WhatsNewViewController</a></span><span class="o">.</span><span class="kt">CompletionButton</span><span class="p">:</span> <span class="kt">ExpressibleByStringLiteral</span></code></pre>
 
                 </div>
               </div>
@@ -208,7 +212,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hapticFeedback</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController.html">WhatsNewViewController</a></span><span class="o">.</span><span class="kt"><a href="../../Classes/WhatsNewViewController/HapticFeedback.html">HapticFeedback</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hapticFeedback</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/HapticFeedback.html">HapticFeedback</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -343,7 +347,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">animation</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController.html">WhatsNewViewController</a></span><span class="o">.</span><span class="kt"><a href="../../Classes/WhatsNewViewController/Animation.html">Animation</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">animation</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/Animation.html">Animation</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -409,7 +413,7 @@
                     <code>
                     <a name="/s:11WhatsNewKit0aB14ViewControllerC16CompletionButtonV5title6action14hapticFeedback15backgroundColor0H4Font0hM012cornerRadius9animation6insets17contentEdgeInsetsAESS_AE6ActionOAC06HapticK0OSgSo7UIColorCSo6UIFontCAV12CoreGraphics7CGFloatVAC9AnimationOSgSo06UIEdgeU0VA4_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(title:action:hapticFeedback:backgroundColor:titleFont:titleColor:cornerRadius:animation:insets:contentEdgeInsets:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC16CompletionButtonV5title6action14hapticFeedback15backgroundColor0H4Font0hM012cornerRadius9animation6insets17contentEdgeInsetsAESS_AE6ActionOAC06HapticK0OSgSo7UIColorCSo6UIFontCAV12CoreGraphics7CGFloatVAC9AnimationOSgSo06UIEdgeU0VA4_tcfc">init(title:action:hapticFeedback:backgroundColor:titleFont:titleColor:cornerRadius:animation:insets:contentEdgeInsets:)</a>
+                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC16CompletionButtonV5title6action14hapticFeedback15backgroundColor0H4Font0hM012cornerRadius9animation6insets17contentEdgeInsetsAESS_AE6ActionOAC06HapticK0OSgSo7UIColorCSo6UIFontCAV12CoreGraphics7CGFloatVAC9AnimationOSgSo06UIEdgeU0VA4_tcfc">init(title:<wbr>action:<wbr>hapticFeedback:<wbr>backgroundColor:<wbr>titleFont:<wbr>titleColor:<wbr>cornerRadius:<wbr>animation:<wbr>insets:<wbr>contentEdgeInsets:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -424,16 +428,18 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"Continue"</span><span class="p">,</span>
-            <span class="nv">action</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/CompletionButton/Action.html">Action</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">dismiss</span><span class="p">,</span>
-            <span class="nv">hapticFeedback</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/HapticFeedback.html">HapticFeedback</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-            <span class="nv">backgroundColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">whatsNewKitBlue</span><span class="p">,</span>
-            <span class="nv">titleFont</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">semibold</span><span class="p">),</span>
-            <span class="nv">titleColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span><span class="p">,</span>
-            <span class="nv">cornerRadius</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span>
-            <span class="nv">animation</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/Animation.html">Animation</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-            <span class="nv">insets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">top</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nv">left</span><span class="p">:</span> <span class="mf">23.5</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="mf">53.5</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span> <span class="mf">23.5</span><span class="p">),</span>
-            <span class="nv">contentEdgeInsets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">top</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="nv">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span> <span class="mi">0</span><span class="p">))</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+    <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"Continue"</span><span class="p">,</span>
+    <span class="nv">action</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/CompletionButton/Action.html">Action</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">dismiss</span><span class="p">,</span>
+    <span class="nv">hapticFeedback</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/HapticFeedback.html">HapticFeedback</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">backgroundColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">whatsNewKitBlue</span><span class="p">,</span>
+    <span class="nv">titleFont</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">semibold</span><span class="p">),</span>
+    <span class="nv">titleColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span><span class="p">,</span>
+    <span class="nv">cornerRadius</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="nv">animation</span><span class="p">:</span> <span class="kt"><a href="../../Classes/WhatsNewViewController/Animation.html">Animation</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">insets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">top</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nv">left</span><span class="p">:</span> <span class="mf">23.5</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="mf">53.5</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span> <span class="mf">23.5</span><span class="p">),</span>
+    <span class="nv">contentEdgeInsets</span><span class="p">:</span> <span class="kt">UIEdgeInsets</span> <span class="o">=</span> <span class="o">.</span><span class="nf">init</span><span class="p">(</span><span class="nv">top</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="nv">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -573,9 +579,11 @@
               <div class="task-name-container">
                 <a name="/ExpressibleByStringLiteral"></a>
                 <a name="//apple_ref/swift/Section/ExpressibleByStringLiteral" class="dashAnchor"></a>
-                <a href="#/ExpressibleByStringLiteral">
-                  <h3 class="section-name">ExpressibleByStringLiteral</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/ExpressibleByStringLiteral"></a>
+                  <h3 class="section-name"><p>ExpressibleByStringLiteral</p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
@@ -583,7 +591,7 @@
                     <code>
                     <a name="/s:11WhatsNewKit0aB14ViewControllerC16CompletionButtonV13stringLiteralAESS_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(stringLiteral:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC16CompletionButtonV13stringLiteralAESS_tcfc">init(stringLiteral:)</a>
+                    <a class="token" href="#/s:11WhatsNewKit0aB14ViewControllerC16CompletionButtonV13stringLiteralAESS_tcfc">init(stringLiteral:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -630,9 +638,11 @@
               <div class="task-name-container">
                 <a name="/Action"></a>
                 <a name="//apple_ref/swift/Section/Action" class="dashAnchor"></a>
-                <a href="#/Action">
-                  <h3 class="section-name">Action</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Action"></a>
+                  <h3 class="section-name"><p>Action</p>
+</h3>
+                </div>
               </div>
               <ul>
                 <li class="item">
@@ -657,6 +667,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">Action</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt"><a href="../../Classes/WhatsNewViewController.html">WhatsNewViewController</a></span><span class="o">.</span><span class="kt"><a href="../../Classes/WhatsNewViewController/CompletionButton.html">CompletionButton</a></span><span class="o">.</span><span class="kt">Action</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
 
                         </div>
                       </div>
@@ -668,8 +679,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>Copyright 2018 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Copyright 2020 Sven Tiigi</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

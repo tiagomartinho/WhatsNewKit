@@ -66,13 +66,16 @@
             <a href="Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Extensions.html#/c:objc(cs)NSUbiquitousKeyValueStore">NSUbiquitousKeyValueStore</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Extensions/Sequence.html">Sequence</a>
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/UIColor.html">UIColor</a>
               </li>
               <li class="nav-group-task">
-                <a href="Extensions/WhatsNewItemsViewController.html">WhatsNewItemsViewController</a>
+                <a href="Extensions.html#/c:objc(cs)NSUserDefaults">UserDefaults</a>
               </li>
             </ul>
           </li>
@@ -129,8 +132,8 @@
    <a href="https://developer.apple.com/swift/">
       <img src="https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat" alt="Swift 5.0">
    </a>
-   <a href="https://travis-ci.com/SvenTiigi/WhatsNewKit">
-      <img src="https://travis-ci.com/SvenTiigi/WhatsNewKit.svg?branch=master" alt="Build Status">
+   <a href="https://github.com/SvenTiigi/WhatsNewKit/actions?query=workflow%3ACI">
+      <img src="https://github.com/SvenTiigi/WhatsNewKit/workflows/CI/badge.svg" alt="CI Status">
    </a>
    <a href="http://cocoapods.org/pods/WhatsNewKit">
       <img src="https://img.shields.io/cocoapods/v/WhatsNewKit.svg?style=flat" alt="Version">
@@ -138,12 +141,9 @@
    <a href="https://github.com/Carthage/Carthage">
       <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible">
    </a>
+   <br/>
    <a href="http://cocoapods.org/pods/WhatsNewKit">
       <img src="https://img.shields.io/cocoapods/p/WhatsNewKit.svg?style=flat" alt="Platform">
-   </a>
-   <br/>
-   <a href="https://codeclimate.com/github/SvenTiigi/WhatsNewKit/maintainability">
-      <img src="https://api.codeclimate.com/v1/badges/e1a0a92affd3c0d0f402/maintainability" />
    </a>
    <a href="https://sventiigi.github.io/WhatsNewKit">
       <img src="https://github.com/SvenTiigi/WhatsNewKit/blob/gh-pages/badge.svg" alt="Documentation">
@@ -260,7 +260,7 @@ it, simply add the following line to your Podfile:</p>
 <span class="n">configuration</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
 <span class="n">configuration</span><span class="o">.</span><span class="n">titleView</span><span class="o">.</span><span class="n">titleColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
 <span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">titleFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">17</span><span class="p">)</span>
-<span class="n">configuration</span><span class="o">.</span><span class="n">detailButton</span><span class="o">.</span><span class="n">titleColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">detailButton</span><span class="p">?</span><span class="o">.</span><span class="n">titleColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
 <span class="n">configuration</span><span class="o">.</span><span class="n">completionButton</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
 <span class="c1">// And many more configuration properties...</span>
 
@@ -299,7 +299,7 @@ it, simply add the following line to your Podfile:</p>
     <span class="n">configuration</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">white</span>
     <span class="n">configuration</span><span class="o">.</span><span class="n">titleView</span><span class="o">.</span><span class="n">titleColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
     <span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">titleFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">17</span><span class="p">)</span>
-    <span class="n">configuration</span><span class="o">.</span><span class="n">detailButton</span><span class="o">.</span><span class="n">titleColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
+    <span class="n">configuration</span><span class="o">.</span><span class="n">detailButton</span><span class="p">?</span><span class="o">.</span><span class="n">titleColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
     <span class="n">configuration</span><span class="o">.</span><span class="n">completionButton</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="o">.</span><span class="n">orange</span>
     <span class="c1">// ...</span>
 <span class="p">}</span>
@@ -324,7 +324,7 @@ it, simply add the following line to your Podfile:</p>
 <p>Dark-Mode compatible Themes: <code>.blue</code>, <code>.lightBlue</code>, <code>.orange</code>, <code>.purple</code>, <code>.red</code>, <code>.green</code> </p>
 <h3 id='layout' class='heading'>Layout 📐</h3>
 
-<p><code>WhatsNewKit</code> comes with two predefined <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BItemsView.swift"><code>ItemsView.Layouts</code></a>. </p>
+<p><code>WhatsNewKit</code> comes with three predefined <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BItemsView.swift"><code>ItemsView.Layouts</code></a>. </p>
 
 <table><thead>
 <tr>
@@ -340,7 +340,7 @@ it, simply add the following line to your Podfile:</p>
 </tr>
 </tbody></table>
 <pre class="highlight swift"><code><span class="c1">// Left Layout</span>
-<span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="o">.</span><span class="k">default</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="o">.</span><span class="n">left</span>
 
 <span class="c1">// Centered Layout</span>
 <span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="o">.</span><span class="n">centered</span>
@@ -405,7 +405,18 @@ it, simply add the following line to your Podfile:</p>
 </code></pre>
 
 <blockquote>
-<p>☝️ In default the ItemsView ImageSize  is set to <code>preferred</code>.</p>
+<p>☝️ In default the ItemsView ImageSize is set to <code>preferred</code>.</p>
+</blockquote>
+<h3 id='image-tint-color' class='heading'>Image Tint-Color</h3>
+
+<p>In default WhatsNewKit auto tints the images of each <code><a href="Structs/WhatsNew/Item.html">WhatsNew.Item</a></code> in the given tint color of the configuration.
+If you wish to disable this functionality simply set <code>autoTintImage</code> to <code>false</code></p>
+<pre class="highlight swift"><code><span class="c1">// Disable auto tinting images</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">autoTintImage</span> <span class="o">=</span> <span class="kc">false</span>
+</code></pre>
+
+<blockquote>
+<p>☝️ In default the ItemsView AutoTintImage is set to <code>true</code>.</p>
 </blockquote>
 <h3 id='animation' class='heading'>Animation 🎬</h3>
 
@@ -419,7 +430,7 @@ it, simply add the following line to your Podfile:</p>
 <span class="n">configuration</span><span class="o">.</span><span class="n">itemsView</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="n">slideRight</span>
 
 <span class="c1">// Set SlideLeft Animation to DetailButton</span>
-<span class="n">configuration</span><span class="o">.</span><span class="n">detailButton</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="n">slideLeft</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">detailButton</span><span class="p">?</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="n">slideLeft</span>
 
 <span class="c1">// Set SlideDown Animation to CompletionButton</span>
 <span class="n">configuration</span><span class="o">.</span><span class="n">completionButton</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="n">slideDown</span>
@@ -432,11 +443,25 @@ it, simply add the following line to your Podfile:</p>
 
 <p>If you wish to define your custom animation, simply set the <code>custom</code> enum and pass an animator closure.</p>
 <pre class="highlight swift"><code><span class="c1">// Custom Animation for DetailButton</span>
-<span class="n">configuration</span><span class="o">.</span><span class="n">detailButton</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">animator</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">settings</span><span class="p">:</span> <span class="kt">AnimatorSettings</span><span class="p">)</span> <span class="k">in</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">detailButton</span><span class="p">?</span><span class="o">.</span><span class="n">animation</span> <span class="o">=</span> <span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">animator</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">settings</span><span class="p">:</span> <span class="kt">AnimatorSettings</span><span class="p">)</span> <span class="k">in</span>
     <span class="c1">// view: The View to perform animation on</span>
     <span class="c1">// settings: Preferred duration and delay</span>
 <span class="p">})</span>
 </code></pre>
+<h3 id='title-mode' class='heading'>Title Mode</h3>
+
+<p>In default the TitleView is sticked to the top. 
+If you wish that the TitleView scrolls with the ItemsView you can change the <code>titleMode</code> on the TitleView configuration.</p>
+<pre class="highlight swift"><code><span class="c1">// TitleView scrolls alongside with the ItemsView</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">titleView</span><span class="o">.</span><span class="n">titleMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">scrolls</span>
+
+<span class="c1">// TitleView is fixed to top</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">titleView</span><span class="o">.</span><span class="n">titleMode</span> <span class="o">=</span> <span class="o">.</span><span class="n">fixed</span>
+</code></pre>
+
+<blockquote>
+<p>☝️ In default the titleMode is set to <code>.fixed</code>.</p>
+</blockquote>
 <h3 id='secondary-title-color' class='heading'>Secondary Title Color</h3>
 
 <p>By setting a <a href="https://github.com/SvenTiigi/WhatsNewKit/blob/master/Sources/Configuration/WhatsNewViewController%2BTitleView.swift">SecondaryColor</a> on the TitleView you can change the color of certain characters.</p>
@@ -756,7 +781,7 @@ it, simply add the following line to your Podfile:</p>
 <p>The <code><a href="Structs/WhatsNew/Item.html">WhatsNew.Item</a></code> images (<a href="https://icons8.com/icon/62856/github">icons8-github</a>, <a href="https://icons8.com/icon/61018/puzzle">icons8-puzzle</a>, <a href="https://icons8.com/icon/59733/approval">icons8-approval</a>, <a href="https://icons8.com/icon/68826/picture">icons8-picture</a>) which are seen on the screenshots and inside the example application are taken from <a href="https://icons8.com/">icons8.com</a> which are licensed under <a href="https://creativecommons.org/licenses/by-nd/3.0/">Creative Commons Attribution-NoDerivs 3.0 Unported</a>.</p>
 <h2 id='license' class='heading'>License</h2>
 <pre class="highlight plaintext"><code>WhatsNewKit
-Copyright (c) 2019 Sven Tiigi &lt;sven.tiigi@gmail.com&gt;
+Copyright (c) 2020 Sven Tiigi &lt;sven.tiigi@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -780,8 +805,8 @@ THE SOFTWARE.
           </section>
         </section>
         <section id="footer">
-          <p>Copyright 2018 Sven Tiigi</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.11.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>Copyright 2020 Sven Tiigi</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
