@@ -12,13 +12,23 @@ let package = Package(
             name: "WhatsNewKit",
             targets: ["WhatsNewKit"]
         ),
+        .library(
+            name: "WhatsNewKitSwiftUI",
+            targets: ["WhatsNewKitSwiftUI"]
+        ),
     ],
     dependencies: [],
     targets: [
         .target(
             name: "WhatsNewKit",
-            dependencies: [],
-            path: "Sources"
+            path: "Sources",
+            exclude: ["SwiftUI"]
+        ),
+        .target(
+            name: "WhatsNewKitSwiftUI",
+            dependencies: ["WhatsNewKit"],
+            path: "Sources",
+            sources: ["SwiftUI"]
         ),
         .testTarget(
             name: "WhatsNewKitTests",
