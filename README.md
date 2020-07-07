@@ -155,13 +155,34 @@ self.present(viewController, animated: true)
 
 ## SwiftUI
 
-If you are using SwiftUI simply use the `WhatsNewView` instead of the `WhatsNewViewController`. 
+If you want to use `WhatsNewKit` alongside with SwiftUI you can make use of the `WhatsNewView` which is available via the `WhatsNewKitSwiftUI` framework.
 
-> Everything else is staying the same in terms of animations, configuration, themes, WhatsNewVersionStore, etc.
+### Installation
+
+In general, you can follow the steps in the Installation guide but with some small modifications.
+
+#### CocoaPods
+
+```bash
+pod 'WhatsNewKit/SwiftUI'
+```
+
+### Carthage
+
+Both WhatsNewKit and WhatsNewKitSwiftUI will be built when running Carthage.
+
+Add `WhatsNewKit.framework` and `WhatsNewKitSwiftUI.framework` to your project as well as to your Input- & Output-Files within your Carthage Run Script Phase in your Xcode Build Phases.
+
+### Swift Package Manager
+
+Instead of adding `WhatsNewKit` to your project, you need to add `WhatsNewKitSwiftUI` in the final step.
+
+### Usage
 
 ```swift
 import SwiftUI
 import WhatsNewKit
+import WhatsNewKitSwiftUI
 
 struct ContentView: View {
     
