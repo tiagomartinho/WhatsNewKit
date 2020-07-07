@@ -81,13 +81,13 @@ On your application targets’ “Build Phases” settings tab, click the “+�
 
 ### Swift Package Manager
 
-To integrate using Apple's [Swift Package Manager](https://swift.org/package-manager/), add the following as a dependency to your `Package.swift`:
+To integrate using Apple's [Swift Package Manager](https://swift.org/package-manager/):
 
-```swift
-dependencies: [
-    .package(url: "https://github.com/SvenTiigi/WhatsNewKit.git", from: "1.3.0")
-]
-```
+1. Open your Xcode project
+2. Click `File` in the menu bar
+3. Choose `Swift Packages`
+4. Select `Add Package Dependency...`
+5. Paste the URL `https://github.com/SvenTiigi/WhatsNewKit` into the search bar and hit enter
 
 ### Manually
 
@@ -159,9 +159,13 @@ If you want to use `WhatsNewKit` alongside with SwiftUI you can make use of the 
 
 ### Installation
 
+> Please ensure that your minimum iOS deployment target is equal to or greater than iOS 13.0 before adding the `WhatsNewKitSwiftUI` framework to your project.
+
 In general, you can follow the steps in the Installation guide but with some small modifications.
 
 #### CocoaPods
+
+Instead of adding `pod WhatsNewKit`, add the following sub-spec to your Podfile.
 
 ```bash
 pod 'WhatsNewKit/SwiftUI'
@@ -189,13 +193,17 @@ struct ContentView: View {
     let whatsNew: WhatsNew
     
     @State
-    var isShowingWhatsNew = false
+    var isPresentingWhatsNew = false
     
     var body: some View {
         Button(
-            action: { self.isShowingWhatsNew.toggle() },
-            label: { Text("Show WhatsNewView") }
-        ).sheet(isPresented: self.$isShowingWhatsNew) {
+            action: { 
+                self.isPresentingWhatsNew.toggle() 
+            },
+            label: { 
+                Text("Show WhatsNew") 
+            }
+        ).sheet(isPresented: self.$isPresentingWhatsNew) {
             WhatsNewView(
                 whatsNew: self.whatsNew
             )
