@@ -10,6 +10,10 @@
 
 import SwiftUI
 
+#if !WhatsNewKitCocoaPods
+import WhatsNewKit
+#endif
+
 /// The WhatsNew SwiftUI View
 @available(iOS 13.0, *)
 public struct WhatsNewView: View {

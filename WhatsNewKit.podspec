@@ -11,4 +11,10 @@ Pod::Spec.new do |s|
     s.ios.deployment_target     = "9.0"
     s.source_files              = 'Sources/**/*'
     s.frameworks                = 'Foundation', 'UIKit'
+    s.subspec "SwiftUI" do |sp|
+        sp.source_files = ["Sources/WhatsNewView.swift"]
+        sp.dependency "WhatsNewKit"
+        sp.ios.deployment_target = "13.0"
+        sp.pod_target_xcconfig = { 'OTHER_SWIFT_FLAGS' => '-DWhatsNewKitCocoaPods' }
+    end
 end
