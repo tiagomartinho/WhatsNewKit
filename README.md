@@ -56,6 +56,8 @@ The example Application is an excellent way to see `WhatsNewKit` in action. You 
 
 ## Installation
 
+> If you are using `SwiftUI` head over to the [SwiftUI Installation guide](https://github.com/SvenTiigi/WhatsNewKit#swiftui)
+
 ### CocoaPods
 
 WhatsNewKit is available through [CocoaPods](http://cocoapods.org). To install
@@ -161,7 +163,7 @@ If you want to use `WhatsNewKit` alongside with SwiftUI you can make use of the 
 
 > Please ensure that your minimum iOS deployment target is equal to or greater than iOS 13.0 before adding the `WhatsNewKitSwiftUI` framework to your project.
 
-In general, you can follow the steps in the Installation guide but with some small modifications.
+In general, you can follow the steps in the [Installation guide](https://github.com/SvenTiigi/WhatsNewKit#installation) but with some small modifications.
 
 #### CocoaPods
 
