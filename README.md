@@ -157,7 +157,7 @@ self.present(viewController, animated: true)
 
 ## SwiftUI
 
-<img src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png" width="90px" align="left">
+<img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/swiftui-logo.png" width="90px" align="left">
 
 <br/>
 
