@@ -181,15 +181,18 @@ Add `WhatsNewKit.framework` and `WhatsNewKitSwiftUI.framework` to your project a
 
 ### Swift Package Manager
 
-In the final step add `WhatsNewKit` and `WhatsNewKitSwiftUI` to your project.
+In the final step, when adding WhatsNewKit via the Swift Package Manager to your Xcode project, ensure to select `WhatsNewKit` as well as `WhatsNewKitSwiftUI`.
 
 <img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/spm-swiftui.png" alt="SPM - SwiftUI">
 
 ### Usage
 
+The following code demonstrates a simple usage to present a `WhatsNewView` in SwiftUI.
+
 ```swift
 import SwiftUI
 import WhatsNewKit
+// Note: Importing WhatsNewKitSwiftUI is not needed when using CocoaPods
 import WhatsNewKitSwiftUI
 
 struct ContentView: View {
@@ -201,10 +204,10 @@ struct ContentView: View {
     
     var body: some View {
         Button(
-            action: { 
+            action: {
                 self.isPresentingWhatsNew.toggle() 
             },
-            label: { 
+            label: {
                 Text("Show WhatsNew") 
             }
         ).sheet(isPresented: self.$isPresentingWhatsNew) {
