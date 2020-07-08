@@ -157,11 +157,18 @@ self.present(viewController, animated: true)
 
 ## SwiftUI
 
-If you want to use `WhatsNewKit` alongside with SwiftUI you can make use of the `WhatsNewView` which is available via the `WhatsNewKitSwiftUI` framework.
+<img src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png" width="90px" align="left">
 
-### Installation
+<br/>
+
+`WhatsNewKit` can be used alongside with SwiftUI.
+A `WhatsNewView` is available within the `WhatsNewKitSwiftuI` framework.
+
+<br/>
 
 > Please ensure that your minimum iOS deployment target is equal to or greater than iOS 13.0 before adding the `WhatsNewKitSwiftUI` framework to your project.
+
+### Installation
 
 In general, you can follow the steps in the [Installation guide](https://github.com/SvenTiigi/WhatsNewKit#installation) but with some small modifications.
 
