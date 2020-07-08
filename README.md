@@ -181,7 +181,9 @@ Add `WhatsNewKit.framework` and `WhatsNewKitSwiftUI.framework` to your project a
 
 ### Swift Package Manager
 
-Instead of adding `WhatsNewKit` to your project, you need to add `WhatsNewKitSwiftUI` in the final step.
+In the final step add `WhatsNewKit` and `WhatsNewKitSwiftUI` to your project.
+
+<img src="https://raw.githubusercontent.com/SvenTiigi/WhatsNewKit/gh-pages/readMeAssets/spm-swiftui.png" alt="SPM - SwiftUI">
 
 ### Usage
 
