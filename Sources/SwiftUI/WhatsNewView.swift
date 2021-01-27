@@ -16,7 +16,7 @@ import WhatsNewKit
 
 /// The WhatsNew SwiftUI View
 @available(iOS 13.0, *)
-public struct WhatsNewView: View {
+public struct WhatsNewView: UIViewControllerRepresentable {
     
     // MARK: Typealias
     
@@ -28,13 +28,18 @@ public struct WhatsNewView: View {
     
     // MARK: Properties
     
-    /// The WhatsNew ViewControllerRepresentable
-    private let whatsNewViewControllerRepresentable: ViewControllerRepresentable
+    /// The WhatsNew object
+    public let whatsNew: WhatsNew
+    
+    /// The Configuration
+    private let configuration: Configuration
+    
+    /// The optional WhatsNewVersionStore
+    private let versionStore: WhatsNewVersionStore?
     
     // MARK: Initializer
     
     /// Designated Initializer with WhatsNew and Configuration
-    ///
     /// - Parameters:
     ///   - whatsNew: The WhatsNew
     ///   - configuration: The Configuration. Default value `.init()`
@@ -42,18 +47,30 @@ public struct WhatsNewView: View {
         whatsNew: WhatsNew,
         configuration: Configuration = .init()
     ) {
-        self.whatsNewViewControllerRepresentable = .init(
-            viewController: WhatsNewViewController(
-                whatsNew: whatsNew,
-                configuration: configuration
-            )
+        self.whatsNew = whatsNew
+        self.configuration = configuration
+        self.versionStore = nil
+    }
+    
+    /// Convenience Initializer with WhatsNew and a Theme
+    /// - Parameters:
+    ///   - whatsNew: The WhatsNew
+    ///   - theme: The Theme
+    public init(
+        whatsNew: WhatsNew,
+        theme: Theme
+    ) {
+        self.init(
+            whatsNew: whatsNew,
+            configuration: .init(theme)
         )
     }
+    
+    // MARK: Optional-Initializer
     
     /// Convenience optional initializer with WhatsNewVersionStore.
     /// Initializer checks via WhatsNewVersionStore if Version has already been presented.
     /// If a Version has been found the initializer will return nil.
-    ///
     /// - Parameters:
     ///   - whatsNew: The WhatsNew
     ///   - configuration: The Configuration
@@ -68,31 +85,14 @@ public struct WhatsNewView: View {
             // Return nil as Version has already been presented
             return nil
         }
-        self.init(
-            whatsNew: whatsNew,
-            configuration: configuration
-        )
-    }
-    
-    /// Convenience Initializer with WhatsNew and a Theme
-    ///
-    /// - Parameters:
-    ///   - whatsNew: The WhatsNew
-    ///   - theme: The Theme
-    public init(
-        whatsNew: WhatsNew,
-        theme: Theme
-    ) {
-        self.init(
-            whatsNew: whatsNew,
-            configuration: .init(theme)
-        )
+        self.whatsNew = whatsNew
+        self.configuration = configuration
+        self.versionStore = versionStore
     }
     
     /// Convenience Initializer with WhatsNew, Theme and WhatsNewVersionStore
     /// Initializer checks via WhatsNewVersionStore if Version has already been presented.
     /// If a Version has been found the initializer will return nil.
-    ///
     /// - Parameters:
     ///   - whatsNew: The WhatsNew
     ///   - theme: The Theme
@@ -108,39 +108,43 @@ public struct WhatsNewView: View {
         )
     }
     
-    // MARK: View
-    
-    /// The type of view representing the body of this view.
-    public var body: some SwiftUI.View {
-        self.whatsNewViewControllerRepresentable
-    }
-    
-}
-
-// MARK: - ViewControllerRepresentable
-
-/// The ViewControllerRepresentable
-@available(iOS 13.0, *)
-private struct ViewControllerRepresentable: UIViewControllerRepresentable {
-    
-    // MARK: Properties
-    
-    /// The UIViewController
-    let viewController: UIViewController
-    
     // MARK: UIViewControllerRepresentable
     
     /// Creates a `UIViewController` instance to be presented.
     /// - Parameter context: The Context
-    func makeUIViewController(context: Context) -> UIViewController {
-        self.viewController
+    public func makeUIViewController(
+        context: Context
+    ) -> UIViewController {
+        // Check if a VersionStore is available
+        if let versionStore = self.versionStore {
+            // Check if WhatsNewViewController can be initialized with VersionStore
+            // This check should never evlaute to `nil` as the VersionStore will
+            // already been checked in the initializer of `WhatsNewView`
+            if let whatsNewViewController = WhatsNewViewController(
+                whatsNew: self.whatsNew,
+                configuration: self.configuration,
+                versionStore: versionStore
+            ) {
+                // Return WhatsNewViewController with VersionStore
+                return whatsNewViewController
+            } else {
+                // Fallback: Return empty ViewController
+                return .init()
+            }
+        } else {
+            // Otherwise initialize WhatsNewViewController without VersionStore
+            return WhatsNewViewController(
+                whatsNew: self.whatsNew,
+                configuration: self.configuration
+            )
+        }
     }
     
     /// Updates the presented `UIViewController` (and coordinator) to the latest configuration.
     /// - Parameters:
     ///   - uiViewController: The UIViewController
     ///   - context: The Context
-    func updateUIViewController(
+    public func updateUIViewController(
         _ uiViewController: UIViewController,
         context: Context
     ) {}
