@@ -7,9 +7,7 @@
 //
 
 #if canImport(SwiftUI)
-
 import SwiftUI
-
 #if !WhatsNewKitCocoaPods
 import WhatsNewKit
 #endif
