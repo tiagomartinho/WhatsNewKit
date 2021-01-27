@@ -13,8 +13,17 @@ import Foundation
 /// The InMemoryWhatsNewVersionStore
 public final class InMemoryWhatsNewVersionStore {
     
+    // MARK: Static-Properties
+    
+    /// The shared (Singleton) `InMemoryWhatsNewVersionStore` instance
+    public static let shared = InMemoryWhatsNewVersionStore()
+    
+    // MARK: Properties
+    
     /// The Versions
     public var versions: [WhatsNew.Version]
+    
+    // MARK: Initializer
     
     /// Default initializer
     public init() {
@@ -22,8 +31,14 @@ public final class InMemoryWhatsNewVersionStore {
         self.versions = .init()
     }
     
+}
+
+// MARK: - Clear Versions
+
+public extension InMemoryWhatsNewVersionStore {
+    
     /// Clear all stored Versions
-    public func clearVersions() {
+    func clearVersions() {
         self.versions.removeAll()
     }
     
@@ -53,7 +68,7 @@ extension InMemoryWhatsNewVersionStore: ReadableWhatsNewVersionStore {
     /// - Returns: Bool if Version has been presented
     public func has(version: WhatsNew.Version) -> Bool {
         // Return if versions is contained in versions
-        return self.versions.contains(version)
+        self.versions.contains(version)
     }
     
 }
