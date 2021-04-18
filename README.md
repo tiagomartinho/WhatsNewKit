@@ -162,7 +162,7 @@ self.present(viewController, animated: true)
 <br/>
 
 `WhatsNewKit` can be used alongside with SwiftUI.
-A `WhatsNewView` is available within the `WhatsNewKitSwiftuI` framework.
+A `WhatsNewView` is available within the `WhatsNewKitSwiftUI` framework.
 
 <br/>
 
