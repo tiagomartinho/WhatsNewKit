@@ -64,8 +64,6 @@ public struct WhatsNewView: UIViewControllerRepresentable {
         )
     }
     
-    // MARK: Optional-Initializer
-    
     /// Convenience optional initializer with WhatsNewVersionStore.
     /// Initializer checks via WhatsNewVersionStore if Version has already been presented.
     /// If a Version has been found the initializer will return nil.
