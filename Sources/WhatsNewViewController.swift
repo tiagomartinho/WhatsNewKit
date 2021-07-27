@@ -132,7 +132,7 @@ public final class WhatsNewViewController: UIViewController {
     )
     
     /// The ButtonViewController
-    lazy var buttonViewController = WhatsNewButtonViewController(
+    public lazy var buttonViewController = WhatsNewButtonViewController(
         configuration: self.configuration,
         onPress: { [weak self] buttonType in
             // Handle Button Press

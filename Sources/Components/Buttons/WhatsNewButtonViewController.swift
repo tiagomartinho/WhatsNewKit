@@ -11,7 +11,7 @@ import UIKit
 // MARK: - WhatsNewButtonViewController
 
 /// The WhatsNewButtonViewController
-final class WhatsNewButtonViewController: UIViewController {
+public final class WhatsNewButtonViewController: UIViewController {
     
     // MARK: Properties
     
@@ -32,7 +32,7 @@ final class WhatsNewButtonViewController: UIViewController {
     )
     
     /// The detail button
-    lazy var detailButton: UIButton = DetailButton(
+    public lazy var detailButton: UIButton = DetailButton(
         detailButton: self.configuration.detailButton,
         onPress: { [weak self] in
             // Invoke on press with detail button type
@@ -67,7 +67,7 @@ final class WhatsNewButtonViewController: UIViewController {
     // MARK: View-Lifecycle
     
     /// View did load
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         // Set background color
         self.view.backgroundColor = self.configuration.backgroundColor
@@ -80,7 +80,7 @@ final class WhatsNewButtonViewController: UIViewController {
     /// View did appear
     ///
     /// - Parameter animated: If should be animated
-    override func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // Disable isHidden
         self.view.isHidden = false
