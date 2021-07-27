@@ -22,7 +22,7 @@ public final class WhatsNewButtonViewController: UIViewController {
     let onPress: (ButtonType) -> Void
     
     /// The completion Button
-    lazy var completionButton: UIButton = CompletionButton(
+    public lazy var completionButton: UIButton = CompletionButton(
         title: self.configuration.completionButton.title,
         configuration: self.configuration,
         onPress: { [weak self] in
