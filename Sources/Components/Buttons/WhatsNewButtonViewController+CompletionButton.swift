@@ -13,7 +13,7 @@ import UIKit
 extension WhatsNewButtonViewController {
     
     /// The CompletionButton
-    final class CompletionButton: UIButton {
+    public final class CompletionButton: UIButton {
         
         // MARK: Properties
         
@@ -51,7 +51,7 @@ extension WhatsNewButtonViewController {
         // MARK: View-Lifecycle
         
         /// Layout Subviews
-        override func layoutSubviews() {
+        public override func layoutSubviews() {
             super.layoutSubviews()
             // Check if current background image is nil
             if self.currentBackgroundImage == nil {
@@ -62,7 +62,7 @@ extension WhatsNewButtonViewController {
         
         /// TraitCollection did change
         /// - Parameter previousTraitCollection: The previous TraitCollection
-        override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
             super.traitCollectionDidChange(previousTraitCollection)
             // Apply background color
             self.applyBackgroundColor()

@@ -13,7 +13,7 @@ import UIKit
 public extension WhatsNewViewController {
     
     /// The WhatsNewViewController Configuration
-    struct Configuration {
+    public struct Configuration {
         
         // MARK: Properties
       
